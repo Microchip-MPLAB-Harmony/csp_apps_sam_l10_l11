@@ -49,7 +49,7 @@
 #include <stdbool.h>                    // Defines true
 #include <stdlib.h>                     // Defines EXIT_FAILURE
 #include "definitions.h"                // SYS function prototypes
-#include "trustZone/veneer.h"
+#include "trustZone/nonsecure_entry.h"
 
 // *****************************************************************************
 // *****************************************************************************

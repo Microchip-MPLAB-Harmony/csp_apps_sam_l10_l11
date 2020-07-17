@@ -1,17 +1,17 @@
 /*******************************************************************************
- System Veneer File
+ Non-secure entry source file for secure project
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    veneer.h
+    nonsecure_entry.c
 
   Summary:
     Implements hooks for Non-secure application
 
   Description:
-    This file is used to define specific API's in the secure world from the Non-Secure world.
+    This file is used to call specific API's in the secure world from the Non-Secure world.
 
  *******************************************************************************/
 
@@ -40,17 +40,14 @@
  *******************************************************************************/
 // DOM-IGNORE-END
 
-// *****************************************************************************
-// *****************************************************************************
-// Section: Included Files
-// *****************************************************************************
-// *****************************************************************************
+#include <stdint.h>
 
-#ifndef VENEER_H_
-#define VENEER_H_
-
-/* Non-secure callable functions */
-extern uint32_t secure_add(uint16_t x, uint16_t y);
-extern uint32_t secure_multiply(uint16_t x, uint16_t y);
-
-#endif /* VENEER_H_ */
+/* Non-secure callable (entry) function */
+int __attribute__((cmse_nonsecure_entry)) secure_add(uint16_t x, uint16_t y)
+{
+	return (x + y);
+}
+int __attribute__((cmse_nonsecure_entry)) secure_multiply(uint16_t x, uint16_t y)
+{
+	return (x * y);
+}
