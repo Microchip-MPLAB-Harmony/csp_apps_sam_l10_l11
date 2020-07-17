@@ -46,13 +46,12 @@
 #include "definitions.h"
 #include "device.h"
 
-
-
 // ****************************************************************************
 // ****************************************************************************
 // Section: Configuration Bits
 // ****************************************************************************
 // ****************************************************************************
+#pragma config NVMCTRL_SULCK = 0x7
 #pragma config NVMCTRL_NSULCK = 0x7
 #pragma config BOD33_LEVEL = 0x6
 #pragma config BOD33_DIS = CLEAR
@@ -67,7 +66,7 @@
 #pragma config BOD33_HYST = CLEAR
 #pragma config IDAU_AS = 0x80
 #pragma config IDAU_ANSC = 0x20
-#pragma config IDAU_DS = 0x8
+#pragma config IDAU_DS = 0xf
 #pragma config IDAU_RS = 0x40
 #pragma config NVMCTRL_URWEN = SET
 #pragma config NONSECA_PAC = CLEAR
@@ -78,7 +77,7 @@
 #pragma config NONSECA_OSC32KCTRL = CLEAR
 #pragma config NONSECA_SUPC = CLEAR
 #pragma config NONSECA_GCLK = CLEAR
-#pragma config NONSECA_WDT = CLEAR
+#pragma config NONSECA_WDT = SET
 #pragma config NONSECA_RTC = SET
 #pragma config NONSECA_EIC = CLEAR
 #pragma config NONSECA_FREQM = CLEAR
@@ -143,6 +142,13 @@
 #pragma config BOOTROM_BOCORHASH_6 = 0xffffffff
 #pragma config BOOTROM_BOCORHASH_7 = 0xffffffff
 
+
+
+// *****************************************************************************
+// *****************************************************************************
+// Section: Local initialization functions
+// *****************************************************************************
+// *****************************************************************************
 
 
 

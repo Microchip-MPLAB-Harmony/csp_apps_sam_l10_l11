@@ -44,12 +44,11 @@
 
 void EVSYS_Initialize( void )
 {
-	/*Event Channel User Configuration*/
-	EVSYS_SEC_REGS->EVSYS_USER[3] = EVSYS_USER_CHANNEL(0x1);
+    /*Event Channel User Configuration*/
+    EVSYS_SEC_REGS->EVSYS_USER[3] = EVSYS_USER_CHANNEL(0x1);
 
-	/* Event Channel 0 Configuration */
-	EVSYS_SEC_REGS->CHANNEL[0].EVSYS_CHANNEL = EVSYS_CHANNEL_EVGEN(6) | EVSYS_CHANNEL_PATH(2) | EVSYS_CHANNEL_EDGSEL(0) \
-									 ;
-	EVSYS_SEC_REGS->EVSYS_NONSECCHAN = 0x1;
+    /* Event Channel 0 Configuration */
+    EVSYS_SEC_REGS->CHANNEL[0].EVSYS_CHANNEL = EVSYS_CHANNEL_EVGEN(4) | EVSYS_CHANNEL_PATH(2) | EVSYS_CHANNEL_EDGSEL(0) \
+                                     ;
+    EVSYS_SEC_REGS->EVSYS_NONSECCHAN = 0x1;
 }
-
