@@ -107,4 +107,9 @@ typedef enum
 
 void EIC_Initialize (void);
 
+
+#ifdef __cplusplus // Provide C++ Compatibility
+}
+#endif
+
 #endif /* PLIB_EIC_H */
