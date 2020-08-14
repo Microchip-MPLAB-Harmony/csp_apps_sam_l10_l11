@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-06-09T10:46:48Z */
+/* file generated from device description version 2020-07-21T06:48:15Z */
 #ifndef _SAML11_OPAMP_COMPONENT_H_
 #define _SAML11_OPAMP_COMPONENT_H_
 
