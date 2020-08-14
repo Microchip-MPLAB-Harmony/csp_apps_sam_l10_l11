@@ -65,18 +65,14 @@
 // *****************************************************************************
 // *****************************************************************************
 
-  
 /*** Macros for LED_SECURE pin ***/
 #define LED_SECURE_Set()               (PORT_SEC_REGS->GROUP[0].PORT_OUTSET = 1 << 7)
 #define LED_SECURE_Clear()             (PORT_SEC_REGS->GROUP[0].PORT_OUTCLR = 1 << 7)
 #define LED_SECURE_Toggle()            (PORT_SEC_REGS->GROUP[0].PORT_OUTTGL = 1 << 7)
-#define LED_SECURE_Get()               (((PORT_SEC_REGS->GROUP[0].PORT_IN >> 7)) & 0x01)
 #define LED_SECURE_OutputEnable()      (PORT_SEC_REGS->GROUP[0].PORT_DIRSET = 1 << 7)
 #define LED_SECURE_InputEnable()       (PORT_SEC_REGS->GROUP[0].PORT_DIRCLR = 1 << 7)
+#define LED_SECURE_Get()               (((PORT_SEC_REGS->GROUP[0].PORT_IN >> 7)) & 0x01)
 #define LED_SECURE_PIN                  PORT_PIN_PA07
-
-
-
 // *****************************************************************************
 /* PORT Group
 
@@ -793,7 +789,7 @@ void PORT_GroupToggle(PORT_GROUP group, uint32_t mask);
     void PORT_GroupInputEnable(PORT_GROUP group, uint32_t mask)
 
   Summary:
-    Confgiures the selected IO pins of a group as input.
+    Configures the selected IO pins of a group as input.
 
   Description:
     This function configures the selected IO pins of a group as input. The pins
@@ -832,7 +828,7 @@ void PORT_GroupInputEnable(PORT_GROUP group, uint32_t mask);
     void PORT_GroupOutputEnable(PORT_GROUP group, uint32_t mask)
 
   Summary:
-    Confgiures the selected IO pins of a group as output.
+    Configures the selected IO pins of a group as output.
 
   Description:
     This function configures the selected IO pins of a group as output. The pins

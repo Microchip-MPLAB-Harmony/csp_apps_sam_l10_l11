@@ -65,27 +65,23 @@
 // *****************************************************************************
 // *****************************************************************************
 
-
-
 /*** Macros for NON_SECURE_PIN pin ***/
 #define NON_SECURE_PIN_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = 1 << 8)
 #define NON_SECURE_PIN_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = 1 << 8)
 #define NON_SECURE_PIN_Toggle()            (PORT_REGS->GROUP[0].PORT_OUTTGL = 1 << 8)
-#define NON_SECURE_PIN_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 8)) & 0x01)
 #define NON_SECURE_PIN_OutputEnable()      (PORT_REGS->GROUP[0].PORT_DIRSET = 1 << 8)
 #define NON_SECURE_PIN_InputEnable()       (PORT_REGS->GROUP[0].PORT_DIRCLR = 1 << 8)
+#define NON_SECURE_PIN_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 8)) & 0x01)
 #define NON_SECURE_PIN_PIN                  PORT_PIN_PA08
 
 /*** Macros for NON_SECURE_STIMULUS pin ***/
 #define NON_SECURE_STIMULUS_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = 1 << 17)
 #define NON_SECURE_STIMULUS_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = 1 << 17)
 #define NON_SECURE_STIMULUS_Toggle()            (PORT_REGS->GROUP[0].PORT_OUTTGL = 1 << 17)
-#define NON_SECURE_STIMULUS_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 17)) & 0x01)
 #define NON_SECURE_STIMULUS_OutputEnable()      (PORT_REGS->GROUP[0].PORT_DIRSET = 1 << 17)
 #define NON_SECURE_STIMULUS_InputEnable()       (PORT_REGS->GROUP[0].PORT_DIRCLR = 1 << 17)
+#define NON_SECURE_STIMULUS_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 17)) & 0x01)
 #define NON_SECURE_STIMULUS_PIN                  PORT_PIN_PA17
-
-
 
 // *****************************************************************************
 /* PORT Group
@@ -712,7 +708,7 @@ void PORT_GroupToggle(PORT_GROUP group, uint32_t mask);
     void PORT_GroupInputEnable(PORT_GROUP group, uint32_t mask)
 
   Summary:
-    Confgiures the selected IO pins of a group as input.
+    Configures the selected IO pins of a group as input.
 
   Description:
     This function configures the selected IO pins of a group as input. The pins
@@ -751,7 +747,7 @@ void PORT_GroupInputEnable(PORT_GROUP group, uint32_t mask);
     void PORT_GroupOutputEnable(PORT_GROUP group, uint32_t mask)
 
   Summary:
-    Confgiures the selected IO pins of a group as output.
+    Configures the selected IO pins of a group as output.
 
   Description:
     This function configures the selected IO pins of a group as output. The pins

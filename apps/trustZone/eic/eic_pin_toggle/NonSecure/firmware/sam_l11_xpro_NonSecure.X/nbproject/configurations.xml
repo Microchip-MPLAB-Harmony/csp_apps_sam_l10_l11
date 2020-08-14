@@ -8,79 +8,80 @@
         <logicalFolder name="f1" displayName="sam_l11_xpro" projectFiles="true">
           <logicalFolder name="f1" displayName="peripheral" projectFiles="true">
             <logicalFolder name="f2" displayName="eic" projectFiles="true">
-              <itemPath>../../../NonSecure/firmware/src/config/sam_l11_xpro/peripheral/eic/plib_eic.h</itemPath>
+              <itemPath>../src/config/sam_l11_xpro/peripheral/eic/plib_eic.h</itemPath>
             </logicalFolder>
             <logicalFolder name="f1" displayName="port" projectFiles="true">
-              <itemPath>../../../NonSecure/firmware/src/config/sam_l11_xpro/peripheral/port/plib_port.h</itemPath>
+              <itemPath>../src/config/sam_l11_xpro/peripheral/port/plib_port.h</itemPath>
             </logicalFolder>
             <logicalFolder name="f3" displayName="rtc" projectFiles="true">
-              <itemPath>../../../NonSecure/firmware/src/config/sam_l11_xpro/peripheral/rtc/plib_rtc.h</itemPath>
+              <itemPath>../src/config/sam_l11_xpro/peripheral/rtc/plib_rtc.h</itemPath>
             </logicalFolder>
           </logicalFolder>
-          <itemPath>../../../NonSecure/firmware/src/config/sam_l11_xpro/device_cache.h</itemPath>
-          <itemPath>../../../NonSecure/firmware/src/config/sam_l11_xpro/toolchain_specifics.h</itemPath>
-          <itemPath>../../../NonSecure/firmware/src/config/sam_l11_xpro/definitions.h</itemPath>
+          <itemPath>../src/config/sam_l11_xpro/device_cache.h</itemPath>
+          <itemPath>../src/config/sam_l11_xpro/toolchain_specifics.h</itemPath>
+          <itemPath>../src/config/sam_l11_xpro/definitions.h</itemPath>
+          <itemPath>../src/config/sam_l11_xpro/device.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="f3" displayName="packs" projectFiles="true">
         <logicalFolder name="f1" displayName="ATSAML11E16A_DFP" projectFiles="true">
           <logicalFolder name="f1" displayName="component" projectFiles="true">
-            <itemPath>../../../NonSecure/firmware/src/packs/ATSAML11E16A_DFP/component/ac.h</itemPath>
-            <itemPath>../../../NonSecure/firmware/src/packs/ATSAML11E16A_DFP/component/adc.h</itemPath>
-            <itemPath>../../../NonSecure/firmware/src/packs/ATSAML11E16A_DFP/component/ccl.h</itemPath>
-            <itemPath>../../../NonSecure/firmware/src/packs/ATSAML11E16A_DFP/component/dac.h</itemPath>
-            <itemPath>../../../NonSecure/firmware/src/packs/ATSAML11E16A_DFP/component/dmac.h</itemPath>
-            <itemPath>../../../NonSecure/firmware/src/packs/ATSAML11E16A_DFP/component/dsu.h</itemPath>
-            <itemPath>../../../NonSecure/firmware/src/packs/ATSAML11E16A_DFP/component/eic.h</itemPath>
-            <itemPath>../../../NonSecure/firmware/src/packs/ATSAML11E16A_DFP/component/evsys.h</itemPath>
-            <itemPath>../../../NonSecure/firmware/src/packs/ATSAML11E16A_DFP/component/freqm.h</itemPath>
-            <itemPath>../../../NonSecure/firmware/src/packs/ATSAML11E16A_DFP/component/gclk.h</itemPath>
-            <itemPath>../../../NonSecure/firmware/src/packs/ATSAML11E16A_DFP/component/idau.h</itemPath>
-            <itemPath>../../../NonSecure/firmware/src/packs/ATSAML11E16A_DFP/component/mclk.h</itemPath>
-            <itemPath>../../../NonSecure/firmware/src/packs/ATSAML11E16A_DFP/component/nvmctrl.h</itemPath>
-            <itemPath>../../../NonSecure/firmware/src/packs/ATSAML11E16A_DFP/component/opamp.h</itemPath>
-            <itemPath>../../../NonSecure/firmware/src/packs/ATSAML11E16A_DFP/component/osc32kctrl.h</itemPath>
-            <itemPath>../../../NonSecure/firmware/src/packs/ATSAML11E16A_DFP/component/oscctrl.h</itemPath>
-            <itemPath>../../../NonSecure/firmware/src/packs/ATSAML11E16A_DFP/component/pac.h</itemPath>
-            <itemPath>../../../NonSecure/firmware/src/packs/ATSAML11E16A_DFP/component/pm.h</itemPath>
-            <itemPath>../../../NonSecure/firmware/src/packs/ATSAML11E16A_DFP/component/port.h</itemPath>
-            <itemPath>../../../NonSecure/firmware/src/packs/ATSAML11E16A_DFP/component/ptc.h</itemPath>
-            <itemPath>../../../NonSecure/firmware/src/packs/ATSAML11E16A_DFP/component/rstc.h</itemPath>
-            <itemPath>../../../NonSecure/firmware/src/packs/ATSAML11E16A_DFP/component/rtc.h</itemPath>
-            <itemPath>../../../NonSecure/firmware/src/packs/ATSAML11E16A_DFP/component/sercom.h</itemPath>
-            <itemPath>../../../NonSecure/firmware/src/packs/ATSAML11E16A_DFP/component/supc.h</itemPath>
-            <itemPath>../../../NonSecure/firmware/src/packs/ATSAML11E16A_DFP/component/tc.h</itemPath>
-            <itemPath>../../../NonSecure/firmware/src/packs/ATSAML11E16A_DFP/component/tram.h</itemPath>
-            <itemPath>../../../NonSecure/firmware/src/packs/ATSAML11E16A_DFP/component/trng.h</itemPath>
-            <itemPath>../../../NonSecure/firmware/src/packs/ATSAML11E16A_DFP/component/wdt.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/component/ac.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/component/adc.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/component/ccl.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/component/dac.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/component/dmac.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/component/dsu.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/component/eic.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/component/evsys.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/component/freqm.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/component/gclk.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/component/idau.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/component/mclk.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/component/nvmctrl.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/component/opamp.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/component/osc32kctrl.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/component/oscctrl.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/component/pac.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/component/pm.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/component/port.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/component/ptc.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/component/rstc.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/component/rtc.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/component/sercom.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/component/supc.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/component/tc.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/component/tram.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/component/trng.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/component/wdt.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f2" displayName="pio" projectFiles="true">
-            <itemPath>../../../NonSecure/firmware/src/packs/ATSAML11E16A_DFP/pio/saml11e16a.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/pio/saml11e16a.h</itemPath>
           </logicalFolder>
-          <itemPath>../../../NonSecure/firmware/src/packs/ATSAML11E16A_DFP/device.h</itemPath>
-          <itemPath>../../../NonSecure/firmware/src/packs/ATSAML11E16A_DFP/atsaml11e16a.h</itemPath>
+          <itemPath>../src/packs/ATSAML11E16A_DFP/atsaml11e16a.h</itemPath>
         </logicalFolder>
         <logicalFolder name="f2" displayName="CMSIS" projectFiles="true">
           <logicalFolder name="f1" displayName="CMSIS" projectFiles="true">
             <logicalFolder name="f1" displayName="Core" projectFiles="true">
               <logicalFolder name="f1" displayName="Include" projectFiles="true">
-                <itemPath>../../../NonSecure/firmware/src/packs/CMSIS/CMSIS/Core/Include/cmsis_version.h</itemPath>
-                <itemPath>../../../NonSecure/firmware/src/packs/CMSIS/CMSIS/Core/Include/cmsis_compiler.h</itemPath>
-                <itemPath>../../../NonSecure/firmware/src/packs/CMSIS/CMSIS/Core/Include/cmsis_iccarm.h</itemPath>
-                <itemPath>../../../NonSecure/firmware/src/packs/CMSIS/CMSIS/Core/Include/cmsis_gcc.h</itemPath>
-                <itemPath>../../../NonSecure/firmware/src/packs/CMSIS/CMSIS/Core/Include/cmsis_armcc.h</itemPath>
-                <itemPath>../../../NonSecure/firmware/src/packs/CMSIS/CMSIS/Core/Include/cmsis_armclang.h</itemPath>
-                <itemPath>../../../NonSecure/firmware/src/packs/CMSIS/CMSIS/Core/Include/cmsis_armclang_ltm.h</itemPath>
-                <itemPath>../../../NonSecure/firmware/src/packs/CMSIS/CMSIS/Core/Include/core_cm23.h</itemPath>
-                <itemPath>../../../NonSecure/firmware/src/packs/CMSIS/CMSIS/Core/Include/mpu_armv8.h</itemPath>
-                <itemPath>../../../NonSecure/firmware/src/packs/CMSIS/CMSIS/Core/Include/tz_context.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_version.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_compiler.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_iccarm.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_gcc.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_armcc.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_armclang.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_armclang_ltm.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/core_cm23.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/mpu_armv8.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cachel1_armv7.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/tz_context.h</itemPath>
               </logicalFolder>
             </logicalFolder>
           </logicalFolder>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="f2" displayName="trustZone" projectFiles="true">
-        <itemPath>../../../NonSecure/firmware/src/trustZone/nonsecure_entry.h</itemPath>
+        <itemPath>../src/trustZone/nonsecure_entry.h</itemPath>
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
@@ -94,31 +95,33 @@
         <logicalFolder name="f1" displayName="sam_l11_xpro" projectFiles="true">
           <logicalFolder name="f2" displayName="peripheral" projectFiles="true">
             <logicalFolder name="f2" displayName="eic" projectFiles="true">
-              <itemPath>../../../NonSecure/firmware/src/config/sam_l11_xpro/peripheral/eic/plib_eic.c</itemPath>
+              <itemPath>../src/config/sam_l11_xpro/peripheral/eic/plib_eic.c</itemPath>
             </logicalFolder>
             <logicalFolder name="f1" displayName="port" projectFiles="true">
-              <itemPath>../../../NonSecure/firmware/src/config/sam_l11_xpro/peripheral/port/plib_port.c</itemPath>
+              <itemPath>../src/config/sam_l11_xpro/peripheral/port/plib_port.c</itemPath>
             </logicalFolder>
             <logicalFolder name="f3" displayName="rtc" projectFiles="true">
-              <itemPath>../../../NonSecure/firmware/src/config/sam_l11_xpro/peripheral/rtc/plib_rtc_timer.c</itemPath>
+              <itemPath>../src/config/sam_l11_xpro/peripheral/rtc/plib_rtc_timer.c</itemPath>
             </logicalFolder>
           </logicalFolder>
           <logicalFolder name="f1" displayName="stdio" projectFiles="true">
-            <itemPath>../../../NonSecure/firmware/src/config/sam_l11_xpro/stdio/xc32_monitor.c</itemPath>
+            <itemPath>../src/config/sam_l11_xpro/stdio/xc32_monitor.c</itemPath>
           </logicalFolder>
-          <itemPath>../../../NonSecure/firmware/src/config/sam_l11_xpro/initialization.c</itemPath>
-          <itemPath>../../../NonSecure/firmware/src/config/sam_l11_xpro/interrupts.c</itemPath>
-          <itemPath>../../../NonSecure/firmware/src/config/sam_l11_xpro/exceptions.c</itemPath>
-          <itemPath>../../../NonSecure/firmware/src/config/sam_l11_xpro/startup_xc32.c</itemPath>
-          <itemPath>../../../NonSecure/firmware/src/config/sam_l11_xpro/libc_syscalls.c</itemPath>
+          <itemPath>../src/config/sam_l11_xpro/initialization.c</itemPath>
+          <itemPath>../src/config/sam_l11_xpro/interrupts.c</itemPath>
+          <itemPath>../src/config/sam_l11_xpro/exceptions.c</itemPath>
+          <itemPath>../src/config/sam_l11_xpro/startup_xc32.c</itemPath>
+          <itemPath>../src/config/sam_l11_xpro/libc_syscalls.c</itemPath>
         </logicalFolder>
       </logicalFolder>
-      <itemPath>../../../NonSecure/firmware/src/main.c</itemPath>
+      <itemPath>../src/main.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="false">
       <itemPath>Makefile</itemPath>
+      <itemPath>../src/config/sam_l11_xpro/harmony.prj</itemPath>
+      <itemPath>../src/config/sam_l11_xpro/sam_l11_xpro.xml</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -139,7 +142,7 @@
       </toolsSet>
       <packs>
         <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
-        <pack name="SAML11_DFP" vendor="Microchip" version="4.0.110"/>
+        <pack name="SAML11_DFP" vendor="Microchip" version="4.0.112"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -215,7 +218,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/sam_l11_xpro;../src/packs/ATSAML11E16A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/"/>
+                  value="../src;../src/config/sam_l11_xpro;../src/packs/ATSAML11E16A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -268,7 +271,7 @@
         <property key="enable-check-sections" value="false"/>
         <property key="exclude-floating-point-library" value="false"/>
         <property key="exclude-standard-libraries" value="false"/>
-        <property key="extra-lib-directories" value="./"/>
+        <property key="extra-lib-directories" value="./;"/>
         <property key="fill-flash-options-addr" value=""/>
         <property key="fill-flash-options-const" value=""/>
         <property key="fill-flash-options-how" value="0"/>
@@ -290,7 +293,7 @@
         <property key="oXC32ld-extra-opts" value=""/>
         <property key="optimization-level" value=""/>
         <property key="preprocessor-macros"
-                  value="AS=0x8000;AS_SIZE=0x8000;RS=0x2000;RS_SIZE=0x2000;BOOTPROT=0x0;BOOTPROT_SIZE=0x0;NONSECURE"/>
+                  value="NONSECURE;;AS_SIZE=0x8000;BOOTPROT_SIZE=0x0;RS_SIZE=0x2000"/>
         <property key="remove-unused-sections" value="true"/>
         <property key="report-memory-usage" value="false"/>
         <property key="serial-length" value=""/>
@@ -299,7 +302,7 @@
         <property key="symbol-stripping" value=""/>
         <property key="trace-symbols" value=""/>
         <property key="warn-section-align" value="false"/>
-        <appendMe value="-l:sam_l11_xpro_Secure_sg_veneer.lib"/>
+        <appendMe value="-l:sam_l11_xpro_Secure_sg_veneer.lib "/>
       </C32-LD>
       <C32CPP>
         <property key="additional-warnings" value="false"/>
@@ -312,7 +315,8 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
-        <property key="extra-include-directories" value=""/>
+        <property key="extra-include-directories"
+                  value="../src;../src/config/sam_l11_xpro;../src/packs/ATSAML11E16A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>

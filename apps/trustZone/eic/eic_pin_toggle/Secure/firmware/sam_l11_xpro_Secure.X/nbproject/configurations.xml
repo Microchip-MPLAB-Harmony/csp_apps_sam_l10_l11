@@ -69,7 +69,6 @@
           <logicalFolder name="f2" displayName="pio" projectFiles="true">
             <itemPath>../src/packs/ATSAML11E16A_DFP/pio/saml11e16a.h</itemPath>
           </logicalFolder>
-          <itemPath>../src/packs/ATSAML11E16A_DFP/device.h</itemPath>
           <itemPath>../src/packs/ATSAML11E16A_DFP/atsaml11e16a.h</itemPath>
         </logicalFolder>
         <logicalFolder name="f2" displayName="CMSIS" projectFiles="true">
@@ -85,12 +84,14 @@
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_armclang_ltm.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/core_cm23.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/mpu_armv8.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cachel1_armv7.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/tz_context.h</itemPath>
               </logicalFolder>
             </logicalFolder>
           </logicalFolder>
         </logicalFolder>
       </logicalFolder>
+      <itemPath>../src/config/sam_l11_xpro/device.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -165,7 +166,7 @@
       </toolsSet>
       <packs>
         <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
-        <pack name="SAML11_DFP" vendor="Microchip" version="4.0.110"/>
+        <pack name="SAML11_DFP" vendor="Microchip" version="4.0.112"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -226,7 +227,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/sam_l11_xpro;../src/packs/ATSAML11E16A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;../src/arm"/>
+                  value="../src;../src/config/sam_l11_xpro;../src/packs/ATSAML11E16A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;../src/arm;"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -243,7 +244,7 @@
         <property key="use-cci" value="false"/>
         <property key="use-iar" value="false"/>
         <property key="use-indirect-calls" value="false"/>
-        <appendMe value="-mcmse"/>
+        <appendMe value="-mcmse "/>
       </C32>
       <C32-AR>
         <property key="additional-options-chop-files" value="false"/>
@@ -302,7 +303,7 @@
         <property key="oXC32ld-extra-opts" value=""/>
         <property key="optimization-level" value=""/>
         <property key="preprocessor-macros"
-                  value="SECURE;AS=0x8000;AS_SIZE=0x8000;ANSC=0x400;ANSC_SIZE=0x400;RS=0x2000;RS_SIZE=0x2000;BOOTPROT=0x0;BOOTPROT_SIZE=0x0;BNSC=0x0;BNSC_SIZE=0x0;BS=0x0;BS_SIZE=0x0"/>
+                  value="BS_SIZE=0x0;ANSC_SIZE=0x400;AS_SIZE=0x8000;SECURE;BOOTPROT_SIZE=0x0;RS_SIZE=0x2000;BNSC_SIZE=0x0"/>
         <property key="remove-unused-sections" value="true"/>
         <property key="report-memory-usage" value="false"/>
         <property key="serial-length" value=""/>
@@ -311,7 +312,7 @@
         <property key="symbol-stripping" value=""/>
         <property key="trace-symbols" value=""/>
         <property key="warn-section-align" value="false"/>
-        <appendMe value="--out-implib=../../../NonSecure/firmware/sam_l11_xpro_NonSecure.X/sam_l11_xpro_Secure_sg_veneer.lib ,--cmse-implib"/>
+        <appendMe value="--out-implib=../../../NonSecure/firmware/sam_l11_xpro_NonSecure.X/sam_l11_xpro_Secure_sg_veneer.lib ,--cmse-implib "/>
       </C32-LD>
       <C32CPP>
         <property key="additional-warnings" value="false"/>
@@ -324,7 +325,8 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
-        <property key="extra-include-directories" value=""/>
+        <property key="extra-include-directories"
+                  value="../src;../src/config/sam_l11_xpro;../src/packs/ATSAML11E16A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;../src/arm;"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -341,6 +343,7 @@
         <property key="use-cci" value="false"/>
         <property key="use-iar" value="false"/>
         <property key="use-indirect-calls" value="false"/>
+        <appendMe value="-mcmse "/>
       </C32CPP>
       <C32Global>
         <property key="common-include-directories" value=""/>
