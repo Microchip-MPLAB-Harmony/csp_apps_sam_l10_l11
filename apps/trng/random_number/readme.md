@@ -55,6 +55,7 @@ The following table shows the target hardware for the application projects.
     ![output](images/output_trng_random_number_2.png)
 
 Following table provides the switch names:
+
 | Board      | Switch Name |
 | ---------- | ---------|
 | [SAML10 Xplained Pro Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/dm320204) | SW0 |
