@@ -110,7 +110,7 @@ void TC2_Timer16bitCounterSet( uint16_t count );
 void TC2_TimerCallbackRegister( TC_TIMER_CALLBACK callback, uintptr_t context );
 
 
-
+void TC2_TimerCommandSet(TC_COMMAND command);
 
 
 // DOM-IGNORE-BEGIN
