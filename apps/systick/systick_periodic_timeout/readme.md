@@ -44,6 +44,6 @@ The following table shows the target hardware for the application projects.
 Following table provides the LED name:
 
 | Board      | LED Name |
-| ---------- | ---------------- |--------- |
+| ---------- | ---------------- |
 | [SAML10 Xplained Pro Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/dm320204) |SW0 |
 |||
