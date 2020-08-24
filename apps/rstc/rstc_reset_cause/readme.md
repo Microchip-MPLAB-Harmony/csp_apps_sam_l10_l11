@@ -66,8 +66,6 @@ The following table shows the target hardware for the application projects.
 
 Following table provides the details of switch and LED
 
-Following table provides the details of switch and LED
-
 | Board      | Switch Name | LED Name |
 | ---------- | ---------| ------------|
 | [SAMC21N Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/atsamc21n-xpro)   | SW0 | LED0 |
