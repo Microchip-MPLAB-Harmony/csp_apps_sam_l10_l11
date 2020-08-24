@@ -43,6 +43,7 @@
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *******************************************************************************/
 // DOM-IGNORE-END
+#include "device.h"
 #include "plib_opamp.h"
 
 // *****************************************************************************
@@ -57,7 +58,7 @@ void OPAMP_Initialize(void)
     OPAMP_REGS->OPAMP_CTRLA = OPAMP_CTRLA_SWRST_Msk;
     /* Configure OPAMPCTRL2 */
     OPAMP_REGS->OPAMP_OPAMPCTRL2 = OPAMP_OPAMPCTRL2_MUXPOS(0) | OPAMP_OPAMPCTRL2_MUXNEG(1) | OPAMP_OPAMPCTRL2_BIAS(0) | OPAMP_OPAMPCTRL2_RES1MUX(3) | OPAMP_OPAMPCTRL2_POTMUX(1) | OPAMP_OPAMPCTRL2_ANAOUT_Msk | OPAMP_OPAMPCTRL2_RES2OUT_Msk | OPAMP_OPAMPCTRL2_RES1EN_Msk | OPAMP_OPAMPCTRL2_ENABLE_Msk ;
-    
+
     /* Enable the peripheral */
     OPAMP_REGS->OPAMP_CTRLA = OPAMP_CTRLA_ENABLE_Msk  | OPAMP_CTRLA_LPMUX_Msk;
 }

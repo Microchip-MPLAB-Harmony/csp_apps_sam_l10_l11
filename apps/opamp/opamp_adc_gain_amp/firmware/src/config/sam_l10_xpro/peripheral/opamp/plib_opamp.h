@@ -48,7 +48,6 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <stddef.h>
-#include "atsaml10e16a.h"
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
@@ -63,5 +62,9 @@
 // *****************************************************************************
 
 void OPAMP_Initialize (void);
+
+#ifdef __cplusplus // Provide C++ Compatibility
+}
+#endif
 
 #endif /* PLIB_OPAMP_H */
