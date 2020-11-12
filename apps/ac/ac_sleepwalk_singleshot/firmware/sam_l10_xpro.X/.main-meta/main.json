@@ -1,0 +1,77 @@
+{
+	"metaDataVersion": "1.0.0",
+	"category": "com.microchip.ide.project",
+	"content": {
+		"metaDataVersion": "1.1.0",
+		"name": "com.microchip.mcu32.mplabx.project.csp_apps_sam_l10_l11_ac_sleepwalk_singleshot",
+		"version": "3.0.1",
+		"displayName": "AC Sleepwalking Example for SAM L10/L11 Family",
+		"projectName": "ac_sleepwalk_singleshot_sam_l10_xpro",
+		"shortDescription": "This example application shows how to use the AC Peripheral library to perform a single shot comparison in standby sleep mode periodically and wake up the device at the end of a successful comparison.",
+		"ide": {
+			"name": "MPLABX",
+			"semverRange": ">=5.40.0"
+		},
+		"compiler": [
+			{
+				"name": "XC32",
+				"semverRange": ">=2.40.0"
+			}
+		],
+		"dfp": {
+			"name": "CMSIS",
+			"semverRange": "^5.4.0"
+		},
+		"configurator": {
+			"name": "MHC",
+			"semverRange": ">=3.5.1"
+		},
+		"device": {
+			"metaDataVersion": "1.0.0",
+			"category": "com.microchip.portal.contentRef",
+			"content": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.device",
+				"name": "ATSAML10E16A",
+				"versionRange": "*"
+			}
+		},
+		"author": "Microchip",
+		"subcategories": [
+			[
+				"Development Kit", "SAML10 Xplained Pro Evaluation Kit"
+			],
+			[
+				"Harmony", "Peripherals", "AC"
+			],
+			[
+				"Peripherals", "AC"
+			]
+		],
+		"peripherals": [
+			"AC"
+		],
+		"keywords": [
+			"MHC",
+			"Harmony",
+			"ATSAML10E16A",
+			"SAM L10/L11 Family",
+			"AC voltage",
+			"AC",
+			"Analog Comparator",
+			"Comparator",
+			"Analog"
+		],
+		"additionalData": {
+			"longDescription": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.portal.fileRef",
+				"content": {
+					"metaDataVersion": "1.0.0",
+					"fileName": "./../../readme.md",
+					"mimeType": "text/markdown"
+				}
+			}
+		}
+	}
+}

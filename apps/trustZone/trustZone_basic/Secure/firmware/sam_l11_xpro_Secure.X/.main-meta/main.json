@@ -1,0 +1,75 @@
+{
+	"metaDataVersion": "1.0.0",
+	"category": "com.microchip.ide.project",
+	"content": {
+		"metaDataVersion": "1.1.0",
+		"name": "com.microchip.mcu32.mplabx.project.csp_apps_sam_l10_l11_Secure",
+		"version": "3.0.1",
+		"displayName": "TrustZone basic demonstration Example for SAM L10/L11 Family",
+		"projectName": "trustZone_basic_sam_l11_xpro_Secure",
+		"shortDescription": "This example application performs Add and Multiply Math operations in secure mode and I/O operations in non-secure mode.",
+		"ide": {
+			"name": "MPLABX",
+			"semverRange": ">=5.40.0"
+		},
+		"compiler": [
+			{
+				"name": "XC32",
+				"semverRange": ">=2.40.0"
+			}
+		],
+		"dfp": {
+			"name": "CMSIS",
+			"semverRange": "^5.4.0"
+		},
+		"configurator": {
+			"name": "MHC",
+			"semverRange": ">=3.5.1"
+		},
+		"device": {
+			"metaDataVersion": "1.0.0",
+			"category": "com.microchip.portal.contentRef",
+			"content": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.device",
+				"name": "ATSAML11E16A",
+				"versionRange": "*"
+			}
+		},
+		"author": "Microchip",
+		"subcategories": [
+			[
+				"Development Kit", "SAML11 Xplained Pro Evaluation Kit"
+			],
+			[
+				"Harmony", "Peripherals", "TRUSTZONE"
+			],
+			[
+				"Peripherals", "TRUSTZONE"
+			]
+		],
+		"peripherals": [
+			"TRUSTZONE"
+		],
+		"keywords": [
+			"MHC",
+			"Harmony",
+			"ATSAML11E16A",
+			"SAM L10/L11 Family",
+			"TRUSTZONE",
+			"TrustZone",
+			"Security"
+		],
+		"additionalData": {
+			"longDescription": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.portal.fileRef",
+				"content": {
+					"metaDataVersion": "1.0.0",
+					"fileName": "./../../../readme.md",
+					"mimeType": "text/markdown"
+				}
+			}
+		}
+	}
+}
