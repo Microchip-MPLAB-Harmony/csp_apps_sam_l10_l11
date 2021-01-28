@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-07-21T06:47:55Z */
+/* file generated from device description version 2020-11-19T07:18:13Z */
 #ifndef _SAML10_IDAU_COMPONENT_H_
 #define _SAML10_IDAU_COMPONENT_H_
 
