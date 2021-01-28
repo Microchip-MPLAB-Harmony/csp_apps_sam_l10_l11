@@ -70,6 +70,27 @@
 
 // *****************************************************************************
 // *****************************************************************************
+// Section:Preprocessor macros
+// *****************************************************************************
+// *****************************************************************************
+
+#define RSTC_RESET_CAUSE_POR_RESET  RSTC_RCAUSE_POR_Msk
+
+#define RSTC_RESET_CAUSE_BOD12_RESET  RSTC_RCAUSE_BOD12_Msk
+
+#define RSTC_RESET_CAUSE_BOD33_RESET  RSTC_RCAUSE_BOD33_Msk
+
+#define RSTC_RESET_CAUSE_EXT_RESET  RSTC_RCAUSE_EXT_Msk
+
+#define RSTC_RESET_CAUSE_WDT_RESET  RSTC_RCAUSE_WDT_Msk
+
+#define RSTC_RESET_CAUSE_SYST_RESET  RSTC_RCAUSE_SYST_Msk
+
+
+
+
+// *****************************************************************************
+// *****************************************************************************
 // Section: Data Types
 // *****************************************************************************
 // *****************************************************************************
@@ -91,22 +112,7 @@
     Refer to the specific device data sheet to determine availability.
 */
 
-typedef enum
-{
-
-    RSTC_RESET_CAUSE_POR_RESET = RSTC_RCAUSE_POR_Msk,
-
-    RSTC_RESET_CAUSE_BOD12_RESET = RSTC_RCAUSE_BOD12_Msk,
-
-    RSTC_RESET_CAUSE_BOD33_RESET = RSTC_RCAUSE_BOD33_Msk,
-
-    RSTC_RESET_CAUSE_EXT_RESET = RSTC_RCAUSE_EXT_Msk,
-
-    RSTC_RESET_CAUSE_WDT_RESET = RSTC_RCAUSE_WDT_Msk,
-
-    RSTC_RESET_CAUSE_SYST_RESET = RSTC_RCAUSE_SYST_Msk,
-
-} RSTC_RESET_CAUSE;
+typedef uint32_t RSTC_RESET_CAUSE;
 
 RSTC_RESET_CAUSE RSTC_ResetCauseGet (void);
 

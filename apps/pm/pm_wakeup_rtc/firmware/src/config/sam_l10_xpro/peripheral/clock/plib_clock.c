@@ -40,6 +40,10 @@
 
 #include "plib_clock.h"
 #include "device.h"
+#include "interrupts.h"
+
+
+
 
 static void OSCCTRL_Initialize(void)
 {
@@ -49,7 +53,7 @@ static void OSCCTRL_Initialize(void)
 
 static void OSC32KCTRL_Initialize(void)
 {
-	OSC32KCTRL_REGS->OSC32KCTRL_RTCCTRL = OSC32KCTRL_RTCCTRL_RTCSEL(0);
+    OSC32KCTRL_REGS->OSC32KCTRL_RTCCTRL = OSC32KCTRL_RTCCTRL_RTCSEL(0);
 }
 
 
@@ -78,7 +82,7 @@ void CLOCK_Initialize (void)
 
 
 
-	/* Selection of the Generator and write Lock for SERCOM0_CORE */
+    /* Selection of the Generator and write Lock for SERCOM0_CORE */
     GCLK_REGS->GCLK_PCHCTRL[11] = GCLK_PCHCTRL_GEN(0x0)  | GCLK_PCHCTRL_CHEN_Msk;
 
     while ((GCLK_REGS->GCLK_PCHCTRL[11] & GCLK_PCHCTRL_CHEN_Msk) != GCLK_PCHCTRL_CHEN_Msk)
@@ -88,3 +92,6 @@ void CLOCK_Initialize (void)
 
 
 }
+
+
+
