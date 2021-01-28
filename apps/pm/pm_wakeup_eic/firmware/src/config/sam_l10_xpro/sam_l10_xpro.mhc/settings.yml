@@ -1,0 +1,13 @@
+configName: sam_l10_xpro
+folderName: ''
+format_version: v1.0
+frameworkPath: ../../../..
+processor: ATSAML10E16A
+projectName: ''
+settings:
+  PackageFilter: csp;
+  FORCE_OPTIMIZATION: 'false'
+  GENERATE_BACKUP: 'true'
+  CMSISPath: .\dev_packs\arm\CMSIS\5.4.0
+  MERGE_STRATEGY: ALL
+  DFPPath: .\dev_packs\Microchip\SAML10_DFP\2.0.19\atdf\ATSAML10E16A.atdf
