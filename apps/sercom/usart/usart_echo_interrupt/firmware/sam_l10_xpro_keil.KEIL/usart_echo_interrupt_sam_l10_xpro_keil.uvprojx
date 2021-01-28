@@ -404,36 +404,6 @@
               <FilePath>..\src\config\sam_l10_xpro_keil\peripheral\sercom\usart\plib_sercom_usart_common.h</FilePath>
             </File>
             <File>
-              <FileName>device_cache.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\src\config\sam_l10_xpro_keil\device_cache.h</FilePath>
-            </File>
-            <File>
-              <FileName>toolchain_specifics.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\src\config\sam_l10_xpro_keil\toolchain_specifics.h</FilePath>
-            </File>
-            <File>
-              <FileName>definitions.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\src\config\sam_l10_xpro_keil\definitions.h</FilePath>
-            </File>
-            <File>
-              <FileName>plib_port.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\src\config\sam_l10_xpro_keil\peripheral\port\plib_port.h</FilePath>
-            </File>
-            <File>
-              <FileName>plib_clock.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\src\config\sam_l10_xpro_keil\peripheral\clock\plib_clock.h</FilePath>
-            </File>
-            <File>
-              <FileName>plib_nvic.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\src\config\sam_l10_xpro_keil\peripheral\nvic\plib_nvic.h</FilePath>
-            </File>
-            <File>
               <FileName>device.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\src\config\sam_l10_xpro_keil\device.h</FilePath>
@@ -579,9 +549,169 @@
               <FilePath>..\src\packs\ATSAML10E16A_DFP\component\wdt.h</FilePath>
             </File>
             <File>
-              <FileName>atsaml10e16a.h</FileName>
+              <FileName>ac.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\src\packs\ATSAML10E16A_DFP\atsaml10e16a.h</FilePath>
+              <FilePath>..\src\packs\ATSAML10E16A_DFP\instance\ac.h</FilePath>
+            </File>
+            <File>
+              <FileName>adc.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAML10E16A_DFP\instance\adc.h</FilePath>
+            </File>
+            <File>
+              <FileName>ccl.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAML10E16A_DFP\instance\ccl.h</FilePath>
+            </File>
+            <File>
+              <FileName>dac.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAML10E16A_DFP\instance\dac.h</FilePath>
+            </File>
+            <File>
+              <FileName>dmac.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAML10E16A_DFP\instance\dmac.h</FilePath>
+            </File>
+            <File>
+              <FileName>dsu.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAML10E16A_DFP\instance\dsu.h</FilePath>
+            </File>
+            <File>
+              <FileName>eic.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAML10E16A_DFP\instance\eic.h</FilePath>
+            </File>
+            <File>
+              <FileName>evsys.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAML10E16A_DFP\instance\evsys.h</FilePath>
+            </File>
+            <File>
+              <FileName>freqm.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAML10E16A_DFP\instance\freqm.h</FilePath>
+            </File>
+            <File>
+              <FileName>gclk.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAML10E16A_DFP\instance\gclk.h</FilePath>
+            </File>
+            <File>
+              <FileName>idau.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAML10E16A_DFP\instance\idau.h</FilePath>
+            </File>
+            <File>
+              <FileName>mclk.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAML10E16A_DFP\instance\mclk.h</FilePath>
+            </File>
+            <File>
+              <FileName>nvmctrl.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAML10E16A_DFP\instance\nvmctrl.h</FilePath>
+            </File>
+            <File>
+              <FileName>opamp.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAML10E16A_DFP\instance\opamp.h</FilePath>
+            </File>
+            <File>
+              <FileName>osc32kctrl.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAML10E16A_DFP\instance\osc32kctrl.h</FilePath>
+            </File>
+            <File>
+              <FileName>oscctrl.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAML10E16A_DFP\instance\oscctrl.h</FilePath>
+            </File>
+            <File>
+              <FileName>pac.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAML10E16A_DFP\instance\pac.h</FilePath>
+            </File>
+            <File>
+              <FileName>pm.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAML10E16A_DFP\instance\pm.h</FilePath>
+            </File>
+            <File>
+              <FileName>port.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAML10E16A_DFP\instance\port.h</FilePath>
+            </File>
+            <File>
+              <FileName>ptc.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAML10E16A_DFP\instance\ptc.h</FilePath>
+            </File>
+            <File>
+              <FileName>rstc.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAML10E16A_DFP\instance\rstc.h</FilePath>
+            </File>
+            <File>
+              <FileName>rtc.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAML10E16A_DFP\instance\rtc.h</FilePath>
+            </File>
+            <File>
+              <FileName>sercom0.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAML10E16A_DFP\instance\sercom0.h</FilePath>
+            </File>
+            <File>
+              <FileName>sercom1.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAML10E16A_DFP\instance\sercom1.h</FilePath>
+            </File>
+            <File>
+              <FileName>sercom2.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAML10E16A_DFP\instance\sercom2.h</FilePath>
+            </File>
+            <File>
+              <FileName>supc.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAML10E16A_DFP\instance\supc.h</FilePath>
+            </File>
+            <File>
+              <FileName>tc0.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAML10E16A_DFP\instance\tc0.h</FilePath>
+            </File>
+            <File>
+              <FileName>tc1.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAML10E16A_DFP\instance\tc1.h</FilePath>
+            </File>
+            <File>
+              <FileName>tc2.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAML10E16A_DFP\instance\tc2.h</FilePath>
+            </File>
+            <File>
+              <FileName>tram.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAML10E16A_DFP\instance\tram.h</FilePath>
+            </File>
+            <File>
+              <FileName>trng.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAML10E16A_DFP\instance\trng.h</FilePath>
+            </File>
+            <File>
+              <FileName>wdt.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAML10E16A_DFP\instance\wdt.h</FilePath>
+            </File>
+            <File>
+              <FileName>saml10e16a.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAML10E16A_DFP\saml10e16a.h</FilePath>
             </File>
             <File>
               <FileName>saml10e16a.h</FileName>
@@ -592,6 +722,46 @@
               <FileName>plib_pm.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\src\config\sam_l10_xpro_keil\peripheral\pm\plib_pm.h</FilePath>
+            </File>
+            <File>
+              <FileName>device_cache.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\config\sam_l10_xpro_keil\device_cache.h</FilePath>
+            </File>
+            <File>
+              <FileName>toolchain_specifics.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\config\sam_l10_xpro_keil\toolchain_specifics.h</FilePath>
+            </File>
+            <File>
+              <FileName>definitions.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\config\sam_l10_xpro_keil\definitions.h</FilePath>
+            </File>
+            <File>
+              <FileName>interrupts.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\config\sam_l10_xpro_keil\interrupts.h</FilePath>
+            </File>
+            <File>
+              <FileName>device_vectors.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\config\sam_l10_xpro_keil\device_vectors.h</FilePath>
+            </File>
+            <File>
+              <FileName>plib_port.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\config\sam_l10_xpro_keil\peripheral\port\plib_port.h</FilePath>
+            </File>
+            <File>
+              <FileName>plib_clock.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\config\sam_l10_xpro_keil\peripheral\clock\plib_clock.h</FilePath>
+            </File>
+            <File>
+              <FileName>plib_nvic.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\config\sam_l10_xpro_keil\peripheral\nvic\plib_nvic.h</FilePath>
             </File>
             <File>
               <FileName>cmsis_version.h</FileName>
@@ -664,6 +834,11 @@
               <FilePath>..\src\config\sam_l10_xpro_keil\peripheral\sercom\usart\plib_sercom0_usart.c</FilePath>
             </File>
             <File>
+              <FileName>plib_pm.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\config\sam_l10_xpro_keil\peripheral\pm\plib_pm.c</FilePath>
+            </File>
+            <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\src\main.c</FilePath>
@@ -707,11 +882,6 @@
               <FileName>startup_keil.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\src\config\sam_l10_xpro_keil\startup_keil.c</FilePath>
-            </File>
-            <File>
-              <FileName>plib_pm.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\src\config\sam_l10_xpro_keil\peripheral\pm\plib_pm.c</FilePath>
             </File>
           </Files>
         </Group>
