@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-07-21T06:47:55Z */
+/* file generated from device description version 2020-11-19T07:18:13Z */
 #ifndef _SAML10_NVMCTRL_COMPONENT_H_
 #define _SAML10_NVMCTRL_COMPONENT_H_
 
@@ -435,7 +435,7 @@ typedef struct
 
 #endif
 
-/** \addtogroup fuses_api b'Peripheral Software API'
+/** \addtogroup fuses_api Peripheral Software API
  *  @{
  */
 
@@ -776,6 +776,6 @@ typedef struct
 #define WDT_FUSES_WINDOW_Msk        (_U_(0xF) << WDT_FUSES_WINDOW_Pos)
 #define WDT_FUSES_WINDOW(value)     (WDT_FUSES_WINDOW_Msk & ((value) << WDT_FUSES_WINDOW_Pos))
 
-/** @}  b'end of Peripheral Software API' */
+/** @}  end of Peripheral Software API */
 
 #endif /* _SAML10_NVMCTRL_COMPONENT_H_ */
