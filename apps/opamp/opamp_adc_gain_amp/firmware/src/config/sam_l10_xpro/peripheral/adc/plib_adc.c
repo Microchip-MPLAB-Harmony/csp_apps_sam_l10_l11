@@ -53,6 +53,7 @@
 /* This section lists the other files that are included in this file.
 */
 
+#include "interrupts.h"
 #include "plib_adc.h"
 
 // *****************************************************************************
@@ -60,13 +61,13 @@
 // Section: Global Data
 // *****************************************************************************
 // *****************************************************************************
-ADC_CALLBACK_OBJ ADC_CallbackObject;
+static ADC_CALLBACK_OBJ ADC_CallbackObject;
 
 #define ADC_LINEARITY_POS  (0)
-#define ADC_LINEARITY_Msk   (0x7 << ADC_LINEARITY_POS)
+#define ADC_LINEARITY_Msk   (0x7UL << ADC_LINEARITY_POS)
 
 #define ADC_BIASCAL_POS  (3)
-#define ADC_BIASCAL_Msk   (0x7 << ADC_BIASCAL_POS)
+#define ADC_BIASCAL_Msk   (0x7UL << ADC_BIASCAL_POS)
 
 // *****************************************************************************
 // *****************************************************************************
@@ -79,37 +80,38 @@ ADC_CALLBACK_OBJ ADC_CallbackObject;
 void ADC_Initialize( void )
 {
     /* Reset ADC */
-    ADC_REGS->ADC_CTRLA = ADC_CTRLA_SWRST_Msk;
+    ADC_REGS->ADC_CTRLA = (uint8_t)ADC_CTRLA_SWRST_Msk;
 
     while((ADC_REGS->ADC_SYNCBUSY & ADC_SYNCBUSY_SWRST_Msk) == ADC_SYNCBUSY_SWRST_Msk)
     {
         /* Wait for Synchronization */
     }
     /* Write linearity calibration in BIASREFBUF and bias calibration in BIASCOMP */
-    ADC_REGS->ADC_CALIB = (uint32_t)(ADC_CALIB_BIASREFBUF(((*(uint64_t*)SW_CALIB_ADDR) & ADC_LINEARITY_Msk))) \
-        | ADC_CALIB_BIASCOMP((((*(uint64_t*)SW_CALIB_ADDR) & ADC_BIASCAL_Msk) >> ADC_BIASCAL_POS));
+    uint32_t calib_low_word = (uint32_t)(*(uint64_t*)SW_CALIB_ADDR);
+    ADC_REGS->ADC_CALIB = (uint16_t)((ADC_CALIB_BIASREFBUF((calib_low_word & ADC_LINEARITY_Msk) >> ADC_LINEARITY_POS)) | 
+                                      (ADC_CALIB_BIASCOMP((calib_low_word & ADC_BIASCAL_Msk) >> ADC_BIASCAL_POS)));
 
     /* Prescaler */
-    ADC_REGS->ADC_CTRLB = ADC_CTRLB_PRESCALER_DIV8;
+    ADC_REGS->ADC_CTRLB = (uint8_t)ADC_CTRLB_PRESCALER_DIV8;
     /* Sampling length */
-    ADC_REGS->ADC_SAMPCTRL = ADC_SAMPCTRL_SAMPLEN(3U);
+    ADC_REGS->ADC_SAMPCTRL = (uint8_t)ADC_SAMPCTRL_SAMPLEN(3UL);
 
     /* Reference */
-    ADC_REGS->ADC_REFCTRL = ADC_REFCTRL_REFSEL_INTVCC2;
+    ADC_REGS->ADC_REFCTRL = (uint8_t)ADC_REFCTRL_REFSEL_INTVCC2;
 
     /* Input pin */
     ADC_REGS->ADC_INPUTCTRL = (uint16_t) ADC_POSINPUT_OPAMP2;
 
     /* Resolution & Operation Mode */
-    ADC_REGS->ADC_CTRLC = ADC_CTRLC_RESSEL_12BIT | ADC_CTRLC_WINMODE(0) ;
+    ADC_REGS->ADC_CTRLC = (uint16_t)(ADC_CTRLC_RESSEL_12BIT | ADC_CTRLC_WINMODE(0UL) );
 
 
     /* Clear all interrupt flags */
-    ADC_REGS->ADC_INTFLAG = ADC_INTFLAG_Msk;
+    ADC_REGS->ADC_INTFLAG = (uint8_t)ADC_INTFLAG_Msk;
     /* Enable interrupts */
-    ADC_REGS->ADC_INTENSET = ADC_INTENSET_RESRDY_Msk;
+    ADC_REGS->ADC_INTENSET = (uint8_t)(ADC_INTENSET_RESRDY_Msk);
 
-    while(ADC_REGS->ADC_SYNCBUSY)
+    while(0U != ADC_REGS->ADC_SYNCBUSY)
     {
         /* Wait for Synchronization */
     }
@@ -118,8 +120,8 @@ void ADC_Initialize( void )
 /* Enable ADC module */
 void ADC_Enable( void )
 {
-    ADC_REGS->ADC_CTRLA |= ADC_CTRLA_ENABLE_Msk;
-    while(ADC_REGS->ADC_SYNCBUSY)
+    ADC_REGS->ADC_CTRLA |= (uint8_t)ADC_CTRLA_ENABLE_Msk;
+    while(0U != ADC_REGS->ADC_SYNCBUSY)
     {
         /* Wait for Synchronization */
     }
@@ -128,8 +130,8 @@ void ADC_Enable( void )
 /* Disable ADC module */
 void ADC_Disable( void )
 {
-    ADC_REGS->ADC_CTRLA &= ~ADC_CTRLA_ENABLE_Msk;
-    while(ADC_REGS->ADC_SYNCBUSY)
+    ADC_REGS->ADC_CTRLA &= (uint8_t)(~ADC_CTRLA_ENABLE_Msk);
+    while(0U != ADC_REGS->ADC_SYNCBUSY)
     {
         /* Wait for Synchronization */
     }
@@ -151,7 +153,7 @@ void ADC_ChannelSelect( ADC_POSINPUT positiveInput, ADC_NEGINPUT negativeInput )
 void ADC_ConversionStart( void )
 {
     /* Start conversion */
-    ADC_REGS->ADC_SWTRIG |= ADC_SWTRIG_START_Msk;
+    ADC_REGS->ADC_SWTRIG |= (uint8_t)ADC_SWTRIG_START_Msk;
 
     while((ADC_REGS->ADC_SYNCBUSY & ADC_SYNCBUSY_SWTRIG_Msk) == ADC_SYNCBUSY_SWTRIG_Msk)
     {
@@ -175,7 +177,7 @@ void ADC_ComparisonWindowSet(uint16_t low_threshold, uint16_t high_threshold)
 {
     ADC_REGS->ADC_WINLT = low_threshold;
     ADC_REGS->ADC_WINUT = high_threshold;
-    while((ADC_REGS->ADC_SYNCBUSY))
+    while(0U != (ADC_REGS->ADC_SYNCBUSY))
     {
         /* Wait for Synchronization */
     }
@@ -183,9 +185,9 @@ void ADC_ComparisonWindowSet(uint16_t low_threshold, uint16_t high_threshold)
 
 void ADC_WindowModeSet(ADC_WINMODE mode)
 {
-    ADC_REGS->ADC_CTRLC &= ~ADC_CTRLC_WINMODE_Msk;
-    ADC_REGS->ADC_CTRLC |= (mode << ADC_CTRLC_WINMODE_Pos);
-    while((ADC_REGS->ADC_SYNCBUSY))
+    ADC_REGS->ADC_CTRLC &= (uint16_t)(~ADC_CTRLC_WINMODE_Msk);
+    ADC_REGS->ADC_CTRLC |= (uint16_t)((uint32_t)mode << ADC_CTRLC_WINMODE_Pos);
+    while(0U != (ADC_REGS->ADC_SYNCBUSY))
     {
         /* Wait for Synchronization */
     }
@@ -195,6 +197,21 @@ void ADC_WindowModeSet(ADC_WINMODE mode)
 uint16_t ADC_ConversionResultGet( void )
 {
     return (uint16_t)ADC_REGS->ADC_RESULT;
+}
+
+void ADC_InterruptsClear(ADC_STATUS interruptMask)
+{
+    ADC_REGS->ADC_INTFLAG = (uint8_t)interruptMask;
+}
+
+void ADC_InterruptsEnable(ADC_STATUS interruptMask)
+{
+    ADC_REGS->ADC_INTENSET = (uint8_t)interruptMask;
+}
+
+void ADC_InterruptsDisable(ADC_STATUS interruptMask)
+{
+    ADC_REGS->ADC_INTENCLR = (uint8_t)interruptMask;
 }
 
 /* Register callback function */
@@ -210,7 +227,7 @@ void ADC_RESRDY_InterruptHandler( void )
     volatile ADC_STATUS status;
     status = ADC_REGS->ADC_INTFLAG & ADC_INTFLAG_RESRDY_Msk;
     /* Clear interrupt flag */
-    ADC_REGS->ADC_INTFLAG = ADC_INTFLAG_RESRDY_Msk;
+    ADC_REGS->ADC_INTFLAG = (uint8_t)ADC_INTFLAG_RESRDY_Msk;
     if (ADC_CallbackObject.callback != NULL)
     {
         ADC_CallbackObject.callback(status, ADC_CallbackObject.context);
