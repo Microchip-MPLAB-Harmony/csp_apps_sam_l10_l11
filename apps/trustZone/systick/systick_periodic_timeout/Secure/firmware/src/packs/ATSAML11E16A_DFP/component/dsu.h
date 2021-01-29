@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-07-21T06:48:15Z */
+/* file generated from device description version 2020-11-19T07:18:37Z */
 #ifndef _SAML11_DSU_COMPONENT_H_
 #define _SAML11_DSU_COMPONENT_H_
 
@@ -391,9 +391,13 @@
 #define DSU_LENGTH_REG_OFST            (0x08)              /**< (DSU_LENGTH) Length Offset */
 #define DSU_DATA_REG_OFST              (0x0C)              /**< (DSU_DATA) Data Offset */
 #define DSU_DCC_REG_OFST               (0x10)              /**< (DSU_DCC) Debug Communication Channel n Offset */
+#define DSU_DCC0_REG_OFST              (0x10)              /**< (DSU_DCC0) Debug Communication Channel n Offset */
+#define DSU_DCC1_REG_OFST              (0x14)              /**< (DSU_DCC1) Debug Communication Channel n Offset */
 #define DSU_DID_REG_OFST               (0x18)              /**< (DSU_DID) Device Identification Offset */
 #define DSU_CFG_REG_OFST               (0x1C)              /**< (DSU_CFG) Configuration Offset */
 #define DSU_BCC_REG_OFST               (0x20)              /**< (DSU_BCC) Boot ROM Communication Channel n Offset */
+#define DSU_BCC0_REG_OFST              (0x20)              /**< (DSU_BCC0) Boot ROM Communication Channel n Offset */
+#define DSU_BCC1_REG_OFST              (0x24)              /**< (DSU_BCC1) Boot ROM Communication Channel n Offset */
 #define DSU_ENTRY0_REG_OFST            (0x1000)            /**< (DSU_ENTRY0) CoreSight ROM Table Entry 0 Offset */
 #define DSU_ENTRY1_REG_OFST            (0x1004)            /**< (DSU_ENTRY1) CoreSight ROM Table Entry 1 Offset */
 #define DSU_END_REG_OFST               (0x1008)            /**< (DSU_END) CoreSight ROM Table End Offset */

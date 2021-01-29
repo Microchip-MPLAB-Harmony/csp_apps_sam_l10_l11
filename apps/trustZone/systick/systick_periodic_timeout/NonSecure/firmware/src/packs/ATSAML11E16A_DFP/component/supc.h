@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-07-21T06:48:15Z */
+/* file generated from device description version 2020-11-19T07:18:37Z */
 #ifndef _SAML11_SUPC_COMPONENT_H_
 #define _SAML11_SUPC_COMPONENT_H_
 

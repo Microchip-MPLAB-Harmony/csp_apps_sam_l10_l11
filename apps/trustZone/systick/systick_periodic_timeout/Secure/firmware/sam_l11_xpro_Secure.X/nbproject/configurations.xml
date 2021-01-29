@@ -32,6 +32,8 @@
           <itemPath>../src/config/sam_l11_xpro/definitions.h</itemPath>
           <itemPath>../src/config/sam_l11_xpro/device_cache.h</itemPath>
           <itemPath>../src/config/sam_l11_xpro/toolchain_specifics.h</itemPath>
+          <itemPath>../src/config/sam_l11_xpro/interrupts.h</itemPath>
+          <itemPath>../src/config/sam_l11_xpro/device_vectors.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="f2" displayName="packs" projectFiles="true">
@@ -66,10 +68,44 @@
             <itemPath>../src/packs/ATSAML11E16A_DFP/component/trng.h</itemPath>
             <itemPath>../src/packs/ATSAML11E16A_DFP/component/wdt.h</itemPath>
           </logicalFolder>
+          <logicalFolder name="f3" displayName="instance" projectFiles="true">
+            <itemPath>../src/packs/ATSAML11E16A_DFP/instance/ac.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/instance/adc.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/instance/ccl.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/instance/dac.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/instance/dmac.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/instance/dsu.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/instance/eic.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/instance/evsys.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/instance/freqm.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/instance/gclk.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/instance/idau.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/instance/mclk.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/instance/nvmctrl.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/instance/opamp.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/instance/osc32kctrl.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/instance/oscctrl.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/instance/pac.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/instance/pm.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/instance/port.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/instance/ptc.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/instance/rstc.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/instance/rtc.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/instance/sercom0.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/instance/sercom1.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/instance/sercom2.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/instance/supc.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/instance/tc0.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/instance/tc1.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/instance/tc2.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/instance/tram.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/instance/trng.h</itemPath>
+            <itemPath>../src/packs/ATSAML11E16A_DFP/instance/wdt.h</itemPath>
+          </logicalFolder>
           <logicalFolder name="f2" displayName="pio" projectFiles="true">
             <itemPath>../src/packs/ATSAML11E16A_DFP/pio/saml11e16a.h</itemPath>
           </logicalFolder>
-          <itemPath>../src/packs/ATSAML11E16A_DFP/atsaml11e16a.h</itemPath>
+          <itemPath>../src/packs/ATSAML11E16A_DFP/saml11e16a.h</itemPath>
         </logicalFolder>
         <logicalFolder name="f2" displayName="CMSIS" projectFiles="true">
           <logicalFolder name="f1" displayName="CMSIS" projectFiles="true">
@@ -96,6 +132,11 @@
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
                    projectFiles="true">
+      <logicalFolder name="f1" displayName="config" projectFiles="true">
+        <logicalFolder name="f1" displayName="sam_l11_xpro" projectFiles="true">
+          <itemPath>../src/config/sam_l11_xpro/ATSAML11E16A.ld</itemPath>
+        </logicalFolder>
+      </logicalFolder>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
@@ -143,9 +184,19 @@
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="false">
+      <logicalFolder name="f1" displayName="sam_l11_xpro.mhc" projectFiles="true">
+        <itemPath>../src/config/sam_l11_xpro/sam_l11_xpro.mhc/cmsis.yml</itemPath>
+        <itemPath>../src/config/sam_l11_xpro/sam_l11_xpro.mhc/core.yml</itemPath>
+        <itemPath>../src/config/sam_l11_xpro/sam_l11_xpro.mhc/dfp.yml</itemPath>
+        <itemPath>../src/config/sam_l11_xpro/sam_l11_xpro.mhc/evsys.yml</itemPath>
+        <itemPath>../src/config/sam_l11_xpro/sam_l11_xpro.mhc/GraphSettings.yml</itemPath>
+        <itemPath>../src/config/sam_l11_xpro/sam_l11_xpro.mhc/nvmctrl.yml</itemPath>
+        <itemPath>../src/config/sam_l11_xpro/sam_l11_xpro.mhc/pm.yml</itemPath>
+        <itemPath>../src/config/sam_l11_xpro/sam_l11_xpro.mhc/project.yml</itemPath>
+        <itemPath>../src/config/sam_l11_xpro/sam_l11_xpro.mhc/settings.yml</itemPath>
+      </logicalFolder>
       <itemPath>Makefile</itemPath>
-      <itemPath>../src/config/sam_l11_xpro/harmony.prj</itemPath>
-      <itemPath>../src/config/sam_l11_xpro/sam_l11_xpro.xml</itemPath>
+      <itemPath>../src/config/sam_l11_xpro/harmony-manifest-success.yml</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -165,7 +216,7 @@
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="SAML11_DFP" vendor="Microchip" version="4.0.112"/>
+        <pack name="SAML11_DFP" vendor="Microchip" version="4.0.115"/>
         <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
       </packs>
       <ScriptingSettings>
@@ -187,6 +238,7 @@
       </compileType>
       <makeCustomizationType>
         <makeCustomizationPreStepEnabled>false</makeCustomizationPreStepEnabled>
+        <makeUseCleanTarget>false</makeUseCleanTarget>
         <makeCustomizationPreStep></makeCustomizationPreStep>
         <makeCustomizationPostStepEnabled>false</makeCustomizationPostStepEnabled>
         <makeCustomizationPostStep></makeCustomizationPostStep>
