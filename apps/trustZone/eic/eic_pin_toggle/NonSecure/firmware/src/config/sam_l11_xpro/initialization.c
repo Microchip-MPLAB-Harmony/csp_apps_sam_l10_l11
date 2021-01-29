@@ -103,6 +103,7 @@
 
 void SYS_Initialize ( void* data )
 {
+
   
 
 
@@ -115,6 +116,7 @@ void SYS_Initialize ( void* data )
 
 
 
+    NVIC_Initialize();
 
 }
 
