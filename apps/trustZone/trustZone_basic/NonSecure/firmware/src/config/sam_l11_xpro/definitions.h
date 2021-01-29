@@ -51,6 +51,7 @@
 #include <stdio.h>
 #include "peripheral/sercom/usart/plib_sercom0_usart.h"
 #include "peripheral/port/plib_port.h"
+#include "peripheral/nvic/plib_nvic.h"
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
@@ -59,6 +60,9 @@ extern "C" {
 
 #endif
 // DOM-IGNORE-END
+
+/* CPU clock frequency */
+#define CPU_CLOCK_FREQUENCY 32000000
 
 // *****************************************************************************
 // *****************************************************************************

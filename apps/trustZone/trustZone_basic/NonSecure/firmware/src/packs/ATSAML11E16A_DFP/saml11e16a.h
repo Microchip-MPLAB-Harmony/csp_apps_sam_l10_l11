@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-07-21T06:48:15Z */
+/* file generated from device description version 2020-11-19T07:18:37Z */
 #ifndef _SAML11E16A_H_
 #define _SAML11E16A_H_
 
@@ -30,12 +30,12 @@
 #define HEADER_FORMAT_VERSION_MAJOR (2)
 #define HEADER_FORMAT_VERSION_MINOR (0)
 
-/** \addtogroup SAML11E16A_definitions b'SAML11E16A definitions
+/** \addtogroup SAML11E16A_definitions SAML11E16A definitions
   This file defines all structures and symbols for SAML11E16A:
     - registers and bitfields
     - peripheral base address
     - peripheral ID
-    - PIO definitions'
+    - PIO definitions
  *  @{
  */
 
@@ -65,7 +65,7 @@
 #  define _UL_(x) x   /**< Assembler: Unsigned Long integer literal constant value */
 #endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
 #endif /* SKIP_INTEGER_LITERALS */
-/** @}  b'end of Atmel Global Defines' */
+/** @}  end of Atmel Global Defines */
 
 /* ************************************************************************** */
 /*   CMSIS DEFINITIONS FOR SAML11E16A                                         */
@@ -286,7 +286,7 @@ void TRAM_Handler                  ( void );
 #include "system_saml11.h"
 #endif /* USE_CMSIS_INIT */
 
-/** \defgroup SAML11E16A_api b'Peripheral Software API'
+/** \defgroup SAML11E16A_api Peripheral Software API
  *  @{
  */
 
@@ -321,9 +321,45 @@ void TRAM_Handler                  ( void );
 #include "component/tram.h"
 #include "component/trng.h"
 #include "component/wdt.h"
-/** @}  b'end of Peripheral Software API' */
+/** @}  end of Peripheral Software API */
 
-/** \addtogroup SAML11E16A_id b'Peripheral Ids Definitions'
+/* ************************************************************************** */
+/*   INSTANCE DEFINITIONS FOR SAML11E16A */
+/* ************************************************************************** */
+#include "instance/ac.h"
+#include "instance/adc.h"
+#include "instance/ccl.h"
+#include "instance/dac.h"
+#include "instance/dmac.h"
+#include "instance/dsu.h"
+#include "instance/eic.h"
+#include "instance/evsys.h"
+#include "instance/freqm.h"
+#include "instance/gclk.h"
+#include "instance/idau.h"
+#include "instance/mclk.h"
+#include "instance/nvmctrl.h"
+#include "instance/opamp.h"
+#include "instance/osc32kctrl.h"
+#include "instance/oscctrl.h"
+#include "instance/pac.h"
+#include "instance/pm.h"
+#include "instance/port.h"
+#include "instance/ptc.h"
+#include "instance/rstc.h"
+#include "instance/rtc.h"
+#include "instance/sercom0.h"
+#include "instance/sercom1.h"
+#include "instance/sercom2.h"
+#include "instance/supc.h"
+#include "instance/tc0.h"
+#include "instance/tc1.h"
+#include "instance/tc2.h"
+#include "instance/tram.h"
+#include "instance/trng.h"
+#include "instance/wdt.h"
+
+/** \addtogroup SAML11E16A_id Peripheral Ids Definitions
  *  @{
  */
 
@@ -364,9 +400,9 @@ void TRAM_Handler                  ( void );
 #define ID_TRAM          ( 77) /**< \brief TrustRAM (TRAM) */
 
 #define ID_PERIPH_MAX    ( 77) /**< \brief Number of peripheral IDs */
-/** @}  b'end of Peripheral Ids Definitions' */
+/** @}  end of Peripheral Ids Definitions */
 
-/** \addtogroup SAML11E16A_base b'Peripheral Base Address Definitions'
+/** \addtogroup SAML11E16A_base Peripheral Base Address Definitions
  *  @{
  */
 
@@ -415,58 +451,58 @@ void TRAM_Handler                  ( void );
 #define TRNG_REGS                        ((trng_registers_t*)0x42002800)               /**< \brief TRNG Registers Address       */
 #define WDT_REGS                         ((wdt_registers_t*)0x40002000)                /**< \brief WDT Registers Address        */
 #endif /* (defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
-/** @}  b'end of Peripheral Base Address Definitions' */
+/** @}  end of Peripheral Base Address Definitions */
 
-/** \addtogroup SAML11E16A_base b'Peripheral Base Address Definitions'
+/** \addtogroup SAML11E16A_base Peripheral Base Address Definitions
  *  @{
  */
 
 /* ************************************************************************** */
 /*   BASE ADDRESS DEFINITIONS FOR SAML11E16A                                  */
 /* ************************************************************************** */
-#define AC_BASE_ADDRESS                  _UL_(0x40003400)                              /**< \brief AC Base Address */
-#define ADC_BASE_ADDRESS                 _UL_(0x42001c00)                              /**< \brief ADC Base Address */
-#define CCL_BASE_ADDRESS                 _UL_(0x42002c00)                              /**< \brief CCL Base Address */
-#define DAC_BASE_ADDRESS                 _UL_(0x42002000)                              /**< \brief DAC Base Address */
-#define DMAC_BASE_ADDRESS                _UL_(0x41006000)                              /**< \brief DMAC Base Address */
-#define DSU_BASE_ADDRESS                 _UL_(0x41002000)                              /**< \brief DSU Base Address */
-#define DSU_EXT_BASE_ADDRESS             _UL_(0x41002100)                              /**< \brief DSU Base Address */
-#define EIC_BASE_ADDRESS                 _UL_(0x40002800)                              /**< \brief EIC Base Address */
-#define EIC_SEC_BASE_ADDRESS             _UL_(0x40002a00)                              /**< \brief EIC Base Address */
-#define EVSYS_BASE_ADDRESS               _UL_(0x42000000)                              /**< \brief EVSYS Base Address */
-#define EVSYS_SEC_BASE_ADDRESS           _UL_(0x42000200)                              /**< \brief EVSYS Base Address */
-#define FREQM_BASE_ADDRESS               _UL_(0x40002c00)                              /**< \brief FREQM Base Address */
-#define GCLK_BASE_ADDRESS                _UL_(0x40001c00)                              /**< \brief GCLK Base Address */
-#define IDAU_BASE_ADDRESS                _UL_(0x41000000)                              /**< \brief IDAU Base Address */
-#define MCLK_BASE_ADDRESS                _UL_(0x40000800)                              /**< \brief MCLK Base Address */
-#define NVMCTRL_BASE_ADDRESS             _UL_(0x41004000)                              /**< \brief NVMCTRL Base Address */
-#define NVMCTRL_SEC_BASE_ADDRESS         _UL_(0x41005000)                              /**< \brief NVMCTRL Base Address */
-#define OPAMP_BASE_ADDRESS               _UL_(0x42003000)                              /**< \brief OPAMP Base Address */
-#define OSCCTRL_BASE_ADDRESS             _UL_(0x40001000)                              /**< \brief OSCCTRL Base Address */
-#define OSC32KCTRL_BASE_ADDRESS          _UL_(0x40001400)                              /**< \brief OSC32KCTRL Base Address */
-#define PAC_BASE_ADDRESS                 _UL_(0x40000000)                              /**< \brief PAC Base Address */
-#define PAC_SEC_BASE_ADDRESS             _UL_(0x40000200)                              /**< \brief PAC Base Address */
-#define PM_BASE_ADDRESS                  _UL_(0x40000400)                              /**< \brief PM Base Address */
-#define PORT_BASE_ADDRESS                _UL_(0x40003000)                              /**< \brief PORT Base Address */
-#define PORT_SEC_BASE_ADDRESS            _UL_(0x40003200)                              /**< \brief PORT Base Address */
-#define PORT_IOBUS_BASE_ADDRESS          _UL_(0x60000000)                              /**< \brief PORT Base Address */
-#define PORT_IOBUS_SEC_BASE_ADDRESS      _UL_(0x60000200)                              /**< \brief PORT Base Address */
-#define PTC_BASE_ADDRESS                 _UL_(0x42002400)                              /**< \brief PTC Base Address */
-#define RSTC_BASE_ADDRESS                _UL_(0x40000c00)                              /**< \brief RSTC Base Address */
-#define RTC_BASE_ADDRESS                 _UL_(0x40002400)                              /**< \brief RTC Base Address */
-#define SERCOM0_BASE_ADDRESS             _UL_(0x42000400)                              /**< \brief SERCOM0 Base Address */
-#define SERCOM1_BASE_ADDRESS             _UL_(0x42000800)                              /**< \brief SERCOM1 Base Address */
-#define SERCOM2_BASE_ADDRESS             _UL_(0x42000c00)                              /**< \brief SERCOM2 Base Address */
-#define SUPC_BASE_ADDRESS                _UL_(0x40001800)                              /**< \brief SUPC Base Address */
-#define TC0_BASE_ADDRESS                 _UL_(0x42001000)                              /**< \brief TC0 Base Address */
-#define TC1_BASE_ADDRESS                 _UL_(0x42001400)                              /**< \brief TC1 Base Address */
-#define TC2_BASE_ADDRESS                 _UL_(0x42001800)                              /**< \brief TC2 Base Address */
-#define TRAM_BASE_ADDRESS                _UL_(0x42003400)                              /**< \brief TRAM Base Address */
-#define TRNG_BASE_ADDRESS                _UL_(0x42002800)                              /**< \brief TRNG Base Address */
-#define WDT_BASE_ADDRESS                 _UL_(0x40002000)                              /**< \brief WDT Base Address */
-/** @}  b'end of Peripheral Base Address Definitions' */
+#define AC_BASE_ADDRESS                  _UL_(0x40003400)                              /* AC Base Address */
+#define ADC_BASE_ADDRESS                 _UL_(0x42001c00)                              /* ADC Base Address */
+#define CCL_BASE_ADDRESS                 _UL_(0x42002c00)                              /* CCL Base Address */
+#define DAC_BASE_ADDRESS                 _UL_(0x42002000)                              /* DAC Base Address */
+#define DMAC_BASE_ADDRESS                _UL_(0x41006000)                              /* DMAC Base Address */
+#define DSU_BASE_ADDRESS                 _UL_(0x41002000)                              /* DSU Base Address */
+#define DSU_EXT_BASE_ADDRESS             _UL_(0x41002100)                              /* DSU Base Address */
+#define EIC_BASE_ADDRESS                 _UL_(0x40002800)                              /* EIC Base Address */
+#define EIC_SEC_BASE_ADDRESS             _UL_(0x40002a00)                              /* EIC Base Address */
+#define EVSYS_BASE_ADDRESS               _UL_(0x42000000)                              /* EVSYS Base Address */
+#define EVSYS_SEC_BASE_ADDRESS           _UL_(0x42000200)                              /* EVSYS Base Address */
+#define FREQM_BASE_ADDRESS               _UL_(0x40002c00)                              /* FREQM Base Address */
+#define GCLK_BASE_ADDRESS                _UL_(0x40001c00)                              /* GCLK Base Address */
+#define IDAU_BASE_ADDRESS                _UL_(0x41000000)                              /* IDAU Base Address */
+#define MCLK_BASE_ADDRESS                _UL_(0x40000800)                              /* MCLK Base Address */
+#define NVMCTRL_BASE_ADDRESS             _UL_(0x41004000)                              /* NVMCTRL Base Address */
+#define NVMCTRL_SEC_BASE_ADDRESS         _UL_(0x41005000)                              /* NVMCTRL Base Address */
+#define OPAMP_BASE_ADDRESS               _UL_(0x42003000)                              /* OPAMP Base Address */
+#define OSCCTRL_BASE_ADDRESS             _UL_(0x40001000)                              /* OSCCTRL Base Address */
+#define OSC32KCTRL_BASE_ADDRESS          _UL_(0x40001400)                              /* OSC32KCTRL Base Address */
+#define PAC_BASE_ADDRESS                 _UL_(0x40000000)                              /* PAC Base Address */
+#define PAC_SEC_BASE_ADDRESS             _UL_(0x40000200)                              /* PAC Base Address */
+#define PM_BASE_ADDRESS                  _UL_(0x40000400)                              /* PM Base Address */
+#define PORT_BASE_ADDRESS                _UL_(0x40003000)                              /* PORT Base Address */
+#define PORT_SEC_BASE_ADDRESS            _UL_(0x40003200)                              /* PORT Base Address */
+#define PORT_IOBUS_BASE_ADDRESS          _UL_(0x60000000)                              /* PORT Base Address */
+#define PORT_IOBUS_SEC_BASE_ADDRESS      _UL_(0x60000200)                              /* PORT Base Address */
+#define PTC_BASE_ADDRESS                 _UL_(0x42002400)                              /* PTC Base Address */
+#define RSTC_BASE_ADDRESS                _UL_(0x40000c00)                              /* RSTC Base Address */
+#define RTC_BASE_ADDRESS                 _UL_(0x40002400)                              /* RTC Base Address */
+#define SERCOM0_BASE_ADDRESS             _UL_(0x42000400)                              /* SERCOM0 Base Address */
+#define SERCOM1_BASE_ADDRESS             _UL_(0x42000800)                              /* SERCOM1 Base Address */
+#define SERCOM2_BASE_ADDRESS             _UL_(0x42000c00)                              /* SERCOM2 Base Address */
+#define SUPC_BASE_ADDRESS                _UL_(0x40001800)                              /* SUPC Base Address */
+#define TC0_BASE_ADDRESS                 _UL_(0x42001000)                              /* TC0 Base Address */
+#define TC1_BASE_ADDRESS                 _UL_(0x42001400)                              /* TC1 Base Address */
+#define TC2_BASE_ADDRESS                 _UL_(0x42001800)                              /* TC2 Base Address */
+#define TRAM_BASE_ADDRESS                _UL_(0x42003400)                              /* TRAM Base Address */
+#define TRNG_BASE_ADDRESS                _UL_(0x42002800)                              /* TRNG Base Address */
+#define WDT_BASE_ADDRESS                 _UL_(0x40002000)                              /* WDT Base Address */
+/** @}  end of Peripheral Base Address Definitions */
 
-/** \addtogroup SAML11E16A_pio b'Peripheral Pio Definitions'
+/** \addtogroup SAML11E16A_pio Peripheral Pio Definitions
  *  @{
  */
 
@@ -474,7 +510,7 @@ void TRAM_Handler                  ( void );
 /*   PIO DEFINITIONS FOR SAML11E16A                                           */
 /* ************************************************************************** */
 #include "pio/saml11e16a.h"
-/** @}  b'end of Peripheral Pio Definitions' */
+/** @}  end of Peripheral Pio Definitions */
 
 /* ************************************************************************** */
 /*   MEMORY MAPPING DEFINITIONS FOR SAML11E16A                                */
@@ -607,8 +643,8 @@ void TRAM_Handler                  ( void );
 #define EVENT_ID_USER_TC2_EVU                            13 /**< ID for TC2 event user EVU */
 #define EVENT_ID_USER_ADC_START                          14 /**< ID for ADC event user START */
 #define EVENT_ID_USER_ADC_FLUSH                          15 /**< ID for ADC event user FLUSH */
-#define EVENT_ID_USER_AC_COMP_0                          16 /**< ID for AC event user COMP_0 */
-#define EVENT_ID_USER_AC_COMP_1                          17 /**< ID for AC event user COMP_1 */
+#define EVENT_ID_USER_AC_SOC_0                           16 /**< ID for AC event user SOC_0 */
+#define EVENT_ID_USER_AC_SOC_1                           17 /**< ID for AC event user SOC_1 */
 #define EVENT_ID_USER_DAC_START                          18 /**< ID for DAC event user START */
 #define EVENT_ID_USER_PTC_STCONV                         19 /**< ID for PTC event user STCONV */
 #define EVENT_ID_USER_PTC_DSEQR                          20 /**< ID for PTC event user DSEQR */
@@ -619,7 +655,7 @@ void TRAM_Handler                  ( void );
 }
 #endif
 
-/** @}  b'end of SAML11E16A definitions' */
+/** @}  end of SAML11E16A definitions */
 
 
 #endif /* _SAML11E16A_H_ */
