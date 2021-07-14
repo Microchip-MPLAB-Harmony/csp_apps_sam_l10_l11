@@ -224,7 +224,7 @@
       </toolsSet>
       <packs>
         <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
-        <pack name="SAML10_DFP" vendor="Microchip" version="3.4.85"/>
+        <pack name="SAML10_DFP" vendor="Microchip" version="3.6.95"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>

@@ -186,7 +186,7 @@
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="SAML11_DFP" vendor="Microchip" version="4.0.115"/>
+        <pack name="SAML11_DFP" vendor="Microchip" version="4.2.130"/>
         <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
       </packs>
       <ScriptingSettings>
