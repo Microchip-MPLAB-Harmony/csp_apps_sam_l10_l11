@@ -64,9 +64,11 @@
 #pragma config WDT_EWOFFSET = 0xB
 #pragma config WDT_WEN = CLEAR
 #pragma config BOD33_HYST = CLEAR
+#pragma config IDAU_RXN = SET
+#pragma config NVMCTRL_DXN = SET
 #pragma config IDAU_AS = 0x80
 #pragma config IDAU_ANSC = 0x20
-#pragma config IDAU_DS = 0xf
+#pragma config IDAU_DS = 0x8
 #pragma config IDAU_RS = 0x40
 #pragma config NVMCTRL_URWEN = SET
 #pragma config NONSECA_PAC = CLEAR
@@ -82,12 +84,12 @@
 #pragma config NONSECA_EIC = CLEAR
 #pragma config NONSECA_FREQM = CLEAR
 #pragma config NONSECA_PORT = CLEAR
-#pragma config NONSECA_AC = CLEAR
+#pragma config NONSECA_AC = SET
 #pragma config NONSECB_IDAU = CLEAR
 #pragma config NONSECB_DSU = SET
-#pragma config NONSECB_NVMCTRL = CLEAR
-#pragma config NONSECB_DMAC = CLEAR
-#pragma config NONSECC_EVSYS = SET
+#pragma config NONSECB_NVMCTRL = SET
+#pragma config NONSECB_DMAC = SET
+#pragma config NONSECC_EVSYS = CLEAR
 #pragma config NONSECC_SERCOM0 = SET
 #pragma config NONSECC_SERCOM1 = CLEAR
 #pragma config NONSECC_SERCOM2 = CLEAR
@@ -164,6 +166,7 @@
 
 void SYS_Initialize ( void* data )
 {
+
     NVMCTRL_SEC_REGS->NVMCTRL_CTRLB = NVMCTRL_CTRLB_RWS(2);
 
     PM_Initialize();

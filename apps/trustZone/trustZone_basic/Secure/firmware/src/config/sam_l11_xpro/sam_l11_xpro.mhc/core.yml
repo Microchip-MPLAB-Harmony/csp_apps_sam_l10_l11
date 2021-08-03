@@ -79,28 +79,21 @@ children:
       - type: Dynamic
         attributes: {id: core, value: '64000000'}
   - type: Hex
-    attributes: {id: FUSE_SYMBOL_VALUE13}
+    attributes: {id: FUSE_SYMBOL_VALUE15}
     children:
     - type: Values
       children:
       - type: Dynamic
         attributes: {id: core, value: '128'}
   - type: Hex
-    attributes: {id: FUSE_SYMBOL_VALUE14}
+    attributes: {id: FUSE_SYMBOL_VALUE16}
     children:
     - type: Values
       children:
       - type: Dynamic
         attributes: {id: core, value: '32'}
   - type: Hex
-    attributes: {id: FUSE_SYMBOL_VALUE15}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: core, value: '64'}
-  - type: Hex
-    attributes: {id: FUSE_SYMBOL_VALUE16}
+    attributes: {id: FUSE_SYMBOL_VALUE18}
     children:
     - type: Values
       children:
@@ -108,6 +101,13 @@ children:
         attributes: {id: core, value: '64'}
   - type: KeyValueSet
     attributes: {id: FUSE_SYMBOL_VALUE33}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '1'}
+  - type: KeyValueSet
+    attributes: {id: FUSE_SYMBOL_VALUE35}
     children:
     - type: Values
       children:
@@ -122,6 +122,13 @@ children:
         attributes: {id: core, value: '1'}
   - type: KeyValueSet
     attributes: {id: FUSE_SYMBOL_VALUE37}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '1'}
+  - type: KeyValueSet
+    attributes: {id: FUSE_SYMBOL_VALUE39}
     children:
     - type: Values
       children:
@@ -657,6 +664,20 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: '0x1'}
+  - type: Boolean
+    attributes: {id: PORT_GROUP_0_PIN_24_USED}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: 'true'}
+  - type: Boolean
+    attributes: {id: PORT_GROUP_0_PIN_25_USED}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: 'true'}
   - type: String
     attributes: {id: PORT_GROUP_0_PMUX12}
     children:

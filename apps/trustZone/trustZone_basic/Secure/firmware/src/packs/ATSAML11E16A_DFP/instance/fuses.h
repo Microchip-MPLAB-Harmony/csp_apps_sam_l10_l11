@@ -21,13 +21,7 @@
  */
 
 /* file generated from device description version 2021-06-28T12:21:22Z */
-#ifndef _SAML11_FREQM_INSTANCE_
-#define _SAML11_FREQM_INSTANCE_
+#ifndef _SAML11_FUSES_INSTANCE_
+#define _SAML11_FUSES_INSTANCE_
 
-
-/* ========== Instance Parameter definitions for FREQM peripheral ========== */
-#define FREQM_GCLK_ID_MSR                        _UL_(4)    /* Index of measure generic clock */
-#define FREQM_GCLK_ID_REF                        _UL_(5)    /* Index of reference generic clock */
-#define FREQM_INSTANCE_ID                        _UL_(11)   
-
-#endif /* _SAML11_FREQM_INSTANCE_ */
+#endif /* _SAML11_FUSES_INSTANCE_ */
