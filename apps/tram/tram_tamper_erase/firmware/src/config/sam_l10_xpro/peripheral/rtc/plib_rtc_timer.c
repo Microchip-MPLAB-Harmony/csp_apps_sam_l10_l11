@@ -58,11 +58,8 @@ void RTC_Initialize(void)
     }
 
     RTC_REGS->MODE0.RTC_CTRLB = (uint16_t)(RTC_MODE0_CTRLB_DEBF(0x6UL)| RTC_MODE0_CTRLB_ACTF(0x0UL) );
+    RTC_REGS->MODE0.RTC_TAMPCTRL = 0x1000002;
 
-    RTC_REGS->MODE0.RTC_TAMPCTRL = (uint16_t)(RTC_TAMPCTRL_IN0ACT(0x2UL)  | RTC_TAMPCTRL_DEBNC0_Msk | \
-                                   RTC_TAMPCTRL_IN1ACT(0x0UL)   | \
-                                   RTC_TAMPCTRL_IN2ACT(0x0UL)  | \
-                                   RTC_TAMPCTRL_IN3ACT(0x0UL) );
 
     RTC_REGS->MODE0.RTC_CTRLA = (uint16_t)(RTC_MODE0_CTRLA_MODE(0UL) | RTC_MODE0_CTRLA_PRESCALER(0x1UL) | RTC_MODE0_CTRLA_COUNTSYNC_Msk );
 

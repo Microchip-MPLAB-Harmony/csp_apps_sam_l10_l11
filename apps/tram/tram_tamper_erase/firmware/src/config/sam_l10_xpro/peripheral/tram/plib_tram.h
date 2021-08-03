@@ -42,6 +42,7 @@
 
 #include <stdint.h>
 #include <stddef.h>
+#include <stdbool.h>
 
 #ifdef __cplusplus // Provide C++ Compatibility
  extern "C" {
@@ -55,7 +56,15 @@
 // *****************************************************************************
 
 /***************************** TRAM API *******************************/
-void TRAM_Initialize( void );	
+void TRAM_Initialize( void );
+
+bool TRAM_RAMSet(uint32_t ramIndex, uint32_t data);
+
+bool TRAM_RAMGet(uint32_t ramIndex, uint32_t *data);
+
+void TRAM_DataScrambleKeySet(uint32_t dsckey);
+
+void TRAM_DataScrambleEnable(bool enable);
 
 #ifdef __cplusplus // Provide C++ Compatibility
  }
