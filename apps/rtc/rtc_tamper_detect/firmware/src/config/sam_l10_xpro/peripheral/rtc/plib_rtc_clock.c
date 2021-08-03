@@ -80,10 +80,7 @@ void RTC_Initialize(void)
         /* Wait for synchronization after Software Reset */
     }
 
-    RTC_REGS->MODE2.RTC_TAMPCTRL = (uint16_t)(RTC_TAMPCTRL_IN0ACT(0x2UL)  | RTC_TAMPCTRL_DEBNC0_Msk | \
-                                   RTC_TAMPCTRL_IN1ACT(0x0UL)   | \
-                                   RTC_TAMPCTRL_IN2ACT(0x0UL)  | \
-                                   RTC_TAMPCTRL_IN3ACT(0x0UL) );
+    RTC_REGS->MODE2.RTC_TAMPCTRL = 0x1000002;
 
     RTC_REGS->MODE2.RTC_CTRLA = (uint16_t)(RTC_MODE2_CTRLA_MODE(2UL) | RTC_MODE2_CTRLA_PRESCALER(0xBUL) | RTC_MODE2_CTRLA_CLOCKSYNC_Msk | RTC_MODE2_CTRLA_ENABLE_Msk );
 
