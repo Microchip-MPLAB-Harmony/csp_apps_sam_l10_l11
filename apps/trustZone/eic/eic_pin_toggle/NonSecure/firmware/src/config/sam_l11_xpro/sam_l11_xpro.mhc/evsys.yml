@@ -130,6 +130,15 @@ children:
       children:
       - type: Dynamic
         attributes: {id: evsys, value: 'false'}
+  - type: File
+    attributes: {id: EVSYS_HEADER_NON_SEC}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'true'}
   - type: Menu
     attributes: {id: EVSYS_MENU_0}
     children:
@@ -160,6 +169,24 @@ children:
       children:
       - type: Dynamic
         attributes: {id: evsys, value: '0'}
+  - type: File
+    attributes: {id: EVSYS_SOURCE_NON_SEC}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'true'}
+  - type: File
+    attributes: {id: EVSYS_SYS_DEF_NON_SEC}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'true'}
   - type: KeyValueSet
     attributes: {id: EVSYS_USER_3}
     children:
