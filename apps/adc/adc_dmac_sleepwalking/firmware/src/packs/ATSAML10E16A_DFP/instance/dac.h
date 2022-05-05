@@ -1,7 +1,7 @@
 /*
  * Instance header file for ATSAML10E16A
  *
- * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -26,8 +26,8 @@
 
 
 /* ========== Instance Parameter definitions for DAC peripheral ========== */
-#define DAC_DMAC_ID_EMPTY                        _UL_(20)   /* Index of DMA EMPTY trigger */
-#define DAC_GCLK_ID                              _UL_(18)   
-#define DAC_INSTANCE_ID                          _UL_(72)   
+#define DAC_DMAC_ID_EMPTY                        (20)       /* Index of DMA EMPTY trigger */
+#define DAC_GCLK_ID                              (18)       
+#define DAC_INSTANCE_ID                          (72)       
 
 #endif /* _SAML10_DAC_INSTANCE_ */
