@@ -42,29 +42,29 @@
 #include "interrupts.h"
 #include "plib_systick.h"
 
-SYSTICK_OBJECT systick;
+static SYSTICK_OBJECT systick;
 
 void SYSTICK_TimerInitialize ( void )
 {
-    SysTick->CTRL = 0;
-    SysTick->VAL = 0;
-    SysTick->LOAD = 0x186a00 - 1;
+    SysTick->CTRL = 0U;
+    SysTick->VAL = 0U;
+    SysTick->LOAD = 0x186a00U - 1U;
    SysTick->CTRL = SysTick_CTRL_TICKINT_Msk | SysTick_CTRL_CLKSOURCE_Msk;
 
-   systick.tickCounter = 0;
+   systick.tickCounter = 0U;
    systick.callback = NULL;
 }
 
 void SYSTICK_TimerRestart ( void )
 {
     SysTick->CTRL &= ~(SysTick_CTRL_ENABLE_Msk);
-    SysTick->VAL = 0;
+    SysTick->VAL = 0U;
     SysTick->CTRL |= SysTick_CTRL_ENABLE_Msk;
 }
 
 void SYSTICK_TimerStart ( void )
 {
-    SysTick->VAL = 0;
+    SysTick->VAL = 0U;
     SysTick->CTRL |= SysTick_CTRL_ENABLE_Msk;
 }
 
@@ -75,7 +75,7 @@ void SYSTICK_TimerStop ( void )
 
 void SYSTICK_TimerPeriodSet ( uint32_t period )
 {
-    SysTick->LOAD = period - 1;
+    SysTick->LOAD = period - 1U;
 }
 
 uint32_t SYSTICK_TimerPeriodGet ( void )
@@ -153,6 +153,27 @@ void SYSTICK_DelayUs ( uint32_t delay_us)
 }
 
 
+
+uint32_t SYSTICK_GetTickCounter(void)
+{
+    return systick.tickCounter;
+}
+
+void SYSTICK_StartTimeOut (SYSTICK_TIMEOUT* timeout, uint32_t delay_ms)
+{
+    timeout->start = SYSTICK_GetTickCounter();
+    timeout->count = (delay_ms*1000U)/SYSTICK_INTERRUPT_PERIOD_IN_US;
+}
+
+void SYSTICK_ResetTimeOut (SYSTICK_TIMEOUT* timeout)
+{
+    timeout->start = SYSTICK_GetTickCounter();
+}
+
+bool SYSTICK_IsTimeoutReached (SYSTICK_TIMEOUT* timeout)
+{
+    return ((SYSTICK_GetTickCounter() - timeout->start) >= timeout->count);
+}
 
 void SYSTICK_TimerCallbackSet ( SYSTICK_CALLBACK callback, uintptr_t context )
 {

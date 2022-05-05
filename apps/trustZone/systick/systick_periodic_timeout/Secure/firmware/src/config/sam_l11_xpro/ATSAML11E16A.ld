@@ -1,7 +1,7 @@
 /*--------------------------------------------------------------------------
  * MPLAB XC32 Compiler -  ATSAML11E16A linker script
  * 
- * Copyright (c) 2021, Microchip Technology Inc. and its subsidiaries ("Microchip")
+ * Copyright (c) 2022, Microchip Technology Inc. and its subsidiaries ("Microchip")
  * All rights reserved.
  * 
  * This software is developed by Microchip Technology Inc. and its
@@ -34,7 +34,6 @@
  * 
  */
 
-
 OUTPUT_FORMAT("elf32-littlearm", "elf32-littlearm", "elf32-littlearm")
 OUTPUT_ARCH(arm)
 SEARCH_DIR(.)
@@ -55,38 +54,30 @@ SEARCH_DIR(.)
  */
 ENTRY(__XC32_RESET_HANDLER_NAME)
 
-/* Device defaults */
-#define _DEVICE_ROM_ORIGIN 0x0
-#define _DEVICE_ROM_LENGTH 0x10000
-#define _DEVICE_RAM_ORIGIN 0x20000000
-#define _DEVICE_RAM_LENGTH 0x4000
-#define _DEVICE_DATAFLASH_LENGTH 0x800
+/*************************************************************************
+ * Memory-Region Macro Definitions
+ * The XC32 linker preprocesses linker scripts. You may define these
+ * macros in the MPLAB X project properties or on the command line when
+ * calling the linker via the xc32-gcc shell.
+ *************************************************************************/
 
-/* Define sizes if they have not been supplied. */
 #ifndef ROM_ORIGIN
-#  define ROM_ORIGIN _DEVICE_ROM_ORIGIN
+#  define ROM_ORIGIN 0x0
 #endif
-
 #ifndef ROM_LENGTH
-#  define ROM_LENGTH _DEVICE_ROM_LENGTH
+#  define ROM_LENGTH 0x10000
+#elif (ROM_LENGTH > 0x10000)
+#  error ROM_LENGTH is greater than the max size of 0x10000
 #endif
-
 #ifndef RAM_ORIGIN
-#  define RAM_ORIGIN _DEVICE_RAM_ORIGIN
+#  define RAM_ORIGIN 0x20000000
 #endif
-
 #ifndef RAM_LENGTH
-#  define RAM_LENGTH _DEVICE_RAM_LENGTH
+#  define RAM_LENGTH 0x4000
+#elif (RAM_LENGTH > 0x4000)
+#  error RAM_LENGTH is greater than the max size of 0x4000
 #endif
 
-/* Check that values are sane. */
-#if ROM_LENGTH > _DEVICE_ROM_LENGTH
-#  error "ROM_LENGTH is greater than the max size of 0x10000"
-#endif
-
-#if RAM_LENGTH > _DEVICE_RAM_LENGTH
-#  error "RAM_LENGTH is greater than the max size of 0x4000"
-#endif
 
 /*  Linker Macros controlling memory regions for TrustZone-M
  *
@@ -230,7 +221,6 @@ ENTRY(__XC32_RESET_HANDLER_NAME)
 #  define TZ_RAM_ORIGIN (RAM_ORIGIN + RS_SIZE)
 #  define TZ_RAM_LENGTH (RAM_LENGTH - RS_SIZE)
 #endif
-
 /*************************************************************************
  * Memory-Region Definitions
  * The MEMORY command describes the location and size of blocks of memory
@@ -288,11 +278,35 @@ MEMORY
   config_0080C0FC : ORIGIN = 0x0080C0FC, LENGTH = 0x4
 
 }
+/*************************************************************************
+ * Output region definitions.
+ * CODE_REGION defines the output region for .text/.rodata.
+ * DATA_REGION defines the output region for .data/.bss
+ * VECTOR_REGION defines the output region for .vectors.
+ * 
+ * CODE_REGION defaults to 'rom', if rom is present (non-zero length),
+ * and 'ram' otherwise.
+ * DATA_REGION defaults to 'ram', which must be present.
+ * VECTOR_REGION defaults to CODE_REGION, unless 'boot_rom' is present.
+ */
+#ifndef CODE_REGION
+# if ROM_LENGTH > 0
+#   define CODE_REGION rom
+# else
+#   define CODE_REGION ram
+# endif
+#endif
+#ifndef DATA_REGION
+# define DATA_REGION ram
+#endif 
+#ifndef VECTOR_REGION
+# define VECTOR_REGION CODE_REGION
+#endif
 
 __rom_end = ORIGIN(rom) + LENGTH(rom);
 #if defined(_SECURE)
 __rom_nsc_end = ORIGIN(rom_nsc) + LENGTH(rom_nsc);
-#endif
+#endif /* defined(SECURE) */
 __ram_end = ORIGIN(ram) + LENGTH(ram);
 
 /*************************************************************************
@@ -443,7 +457,7 @@ SECTIONS
         KEEP(*(.isr_vector))
         KEEP(*(.reset*))
         KEEP(*(.after_vectors))
-    } > rom
+    } > VECTOR_REGION
     /*
      * Code Sections - Note that standard input sections such as
      * *(.text), *(.text.*), *(.rodata), & *(.rodata.*)
@@ -455,12 +469,12 @@ SECTIONS
     {
         . = ALIGN(4);
         *(.glue_7t) *(.glue_7)
-        /* Force the inclusion of debug info for veneers. This is
-         * sensitive to the name of the .o file containing the
-         * cmse_nonsecure_entry functions. What are given are
-         * common file names. */
-        KEEP(*veneer.o(.text.*))
-        KEEP(*nonsecure_entry.o(.text.*))
+       /* Force the inclusion of debug info for veneers. This is
+        * sensitive to the name of the .o file containing the
+        * cmse_nonsecure_entry functions. What are given are
+        * common file names. */
+       KEEP(*veneer.o(.text.*))
+       KEEP(*nonsecure_entry.o(.text.*))
         *(.gnu.linkonce.r.*)
         *(.ARM.extab* .gnu.linkonce.armextab.*)
 
@@ -501,14 +515,14 @@ SECTIONS
 
         . = ALIGN(4);
         _efixed = .;            /* End of text section */
-    } > rom
+    } > CODE_REGION
 
     /* .ARM.exidx is sorted, so has to go in its own output section.  */
     PROVIDE_HIDDEN (__exidx_start = .);
     .ARM.exidx :
     {
       *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-    } > rom
+    } > CODE_REGION
     PROVIDE_HIDDEN (__exidx_end = .);
 
     . = ALIGN(4);
@@ -542,9 +556,11 @@ SECTIONS
         __bss_end__ = .;
         _ebss = . ;
         _ezero = .;
-    } > ram
+    } > DATA_REGION
 
     . = ALIGN(4);
     _end = . ;
     _ram_end_ = ORIGIN(ram) + LENGTH(ram) -1 ;
+    
 }
+
