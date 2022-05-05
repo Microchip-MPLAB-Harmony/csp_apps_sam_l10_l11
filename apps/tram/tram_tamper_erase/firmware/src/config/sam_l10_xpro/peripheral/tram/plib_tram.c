@@ -60,26 +60,24 @@ void TRAM_Initialize( void )
 
 bool TRAM_RAMSet(uint32_t ramIndex, uint32_t data)
 {
-    if (ramIndex > 63)
+    bool ramIndexStatus = false;
+    if (ramIndex < 64U)
     {
-        return false;
+        TRAM_REGS->TRAM_RAM[ramIndex] = TRAM_RAM_DATA(data);
+        ramIndexStatus = true;
     }
-
-    TRAM_REGS->TRAM_RAM[ramIndex] = TRAM_RAM_DATA(data);
-
-    return true;
+    return ramIndexStatus;
 }
 
 bool TRAM_RAMGet(uint32_t ramIndex, uint32_t *data)
 {
-    if (ramIndex > 63)
+    bool ramIndexStatus = false;
+    if (ramIndex < 64U)
     {
-        return false;
+        *data = TRAM_REGS->TRAM_RAM[ramIndex];
+        ramIndexStatus = true;
     }
-
-    *data = TRAM_REGS->TRAM_RAM[ramIndex];
-
-    return true;
+    return ramIndexStatus;
 }
 
 void TRAM_DataScrambleKeySet(uint32_t dsckey)
