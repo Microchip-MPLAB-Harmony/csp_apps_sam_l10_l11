@@ -63,10 +63,10 @@
 // *****************************************************************************
 static ADC_CALLBACK_OBJ ADC_CallbackObject;
 
-#define ADC_LINEARITY_POS  (0)
+#define ADC_LINEARITY_POS  (0U)
 #define ADC_LINEARITY_Msk   (0x7UL << ADC_LINEARITY_POS)
 
-#define ADC_BIASCAL_POS  (3)
+#define ADC_BIASCAL_POS  (3U)
 #define ADC_BIASCAL_Msk   (0x7UL << ADC_BIASCAL_POS)
 
 // *****************************************************************************
@@ -185,8 +185,7 @@ void ADC_ComparisonWindowSet(uint16_t low_threshold, uint16_t high_threshold)
 
 void ADC_WindowModeSet(ADC_WINMODE mode)
 {
-    ADC_REGS->ADC_CTRLC &= (uint16_t)(~ADC_CTRLC_WINMODE_Msk);
-    ADC_REGS->ADC_CTRLC |= (uint16_t)((uint32_t)mode << ADC_CTRLC_WINMODE_Pos);
+	ADC_REGS->ADC_CTRLC =  (ADC_REGS->ADC_CTRLC & (uint16_t)(~ADC_CTRLC_WINMODE_Msk)) | (uint16_t)((uint32_t)mode << ADC_CTRLC_WINMODE_Pos);
     while(0U != (ADC_REGS->ADC_SYNCBUSY))
     {
         /* Wait for Synchronization */
