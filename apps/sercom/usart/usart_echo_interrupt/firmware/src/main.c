@@ -96,6 +96,7 @@ int main ( void )
 {
     /* Initialize all modules */
     SYS_Initialize ( NULL );
+    LED_ON();
 
     /* Register callback functions and send start message */
     SERCOM0_USART_WriteCallbackRegister(APP_WriteCallback, 0);

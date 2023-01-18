@@ -74,13 +74,14 @@ char data = 0;
 int main ( void )
 {
     uint16_t rxCounter=0;
-    
+
     /* Initialize all modules */
     SYS_Initialize ( NULL );
+    LED_ON();
 
     /* Send start message */
     SERCOM0_USART_Write(&messageStart[0], sizeof(messageStart));
-    
+
     while ( true )
     {
         /* Check if there is a received character */
