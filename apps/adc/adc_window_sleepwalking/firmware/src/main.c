@@ -83,7 +83,6 @@ int main ( void )
     
     ADC_CallbackRegister(adc_cb, adc_context);
     ADC_Enable();
-    printf("\r\nConnect input signal to the configured ADC pin\r\n");
     
     while ( true )
     {
