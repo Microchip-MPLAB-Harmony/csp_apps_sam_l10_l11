@@ -63,10 +63,10 @@
 char srcBuffer[TRANSFER_SIZE] = {};
 char dstBuffer1[TRANSFER_SIZE] = {};
 char dstBuffer2[TRANSFER_SIZE] = {};
-volatile bool completeStatus = false;
-volatile bool errorStatus = false;
-volatile uint8_t transfersDone = 0;
-volatile uint32_t timeStamp=0;
+static volatile bool completeStatus = false;
+static volatile bool errorStatus = false;
+static volatile uint8_t transfersDone = 0;
+static volatile uint32_t timeStamp=0;
 uint32_t transferCyclesBeatSize32=0,transferCyclesBeatSize16=0;
 
 void APP_Callback(DMAC_TRANSFER_EVENT status, uintptr_t context)
