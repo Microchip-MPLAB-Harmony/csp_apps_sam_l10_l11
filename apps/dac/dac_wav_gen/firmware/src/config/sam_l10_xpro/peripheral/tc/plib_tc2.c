@@ -62,7 +62,7 @@
 // *****************************************************************************
 // *****************************************************************************
 
-static TC_TIMER_CALLBACK_OBJ TC2_CallbackObject;
+volatile static TC_TIMER_CALLBACK_OBJ TC2_CallbackObject;
 
 // *****************************************************************************
 // *****************************************************************************
@@ -89,7 +89,7 @@ void TC2_TimerInitialize( void )
     TC2_REGS->COUNT16.TC_WAVE = (uint8_t)TC_WAVE_WAVEGEN_MPWM;
 
     /* Configure timer period */
-    TC2_REGS->COUNT16.TC_CC[0U] = 319U;
+    TC2_REGS->COUNT16.TC_CC[0U] = 318U;
 
     /* Clear all interrupt flags */
     TC2_REGS->COUNT16.TC_INTFLAG = (uint8_t)TC_INTFLAG_Msk;
@@ -136,7 +136,7 @@ void TC2_TimerCommandSet(TC_COMMAND command)
     while((TC2_REGS->COUNT16.TC_SYNCBUSY) != 0U)
     {
         /* Wait for Write Synchronization */
-    }    
+    }
 }
 
 /* Get the current timer counter value */
@@ -197,7 +197,7 @@ void TC2_TimerCallbackRegister( TC_TIMER_CALLBACK callback, uintptr_t context )
 }
 
 /* Timer Interrupt handler */
-void TC2_TimerInterruptHandler( void )
+void __attribute__((used)) TC2_TimerInterruptHandler( void )
 {
     if (TC2_REGS->COUNT16.TC_INTENSET != 0U)
     {
@@ -205,9 +205,10 @@ void TC2_TimerInterruptHandler( void )
         status = (TC_TIMER_STATUS) TC2_REGS->COUNT16.TC_INTFLAG;
         /* Clear interrupt flags */
         TC2_REGS->COUNT16.TC_INTFLAG = (uint8_t)TC_INTFLAG_Msk;
-        if((status != TC_TIMER_STATUS_NONE) && (TC2_CallbackObject.callback != NULL))
+        if((TC2_CallbackObject.callback != NULL) && (status != TC_TIMER_STATUS_NONE))
         {
-            TC2_CallbackObject.callback(status, TC2_CallbackObject.context);
+            uintptr_t context = TC2_CallbackObject.context;
+            TC2_CallbackObject.callback(status, context);
         }
     }
 }
