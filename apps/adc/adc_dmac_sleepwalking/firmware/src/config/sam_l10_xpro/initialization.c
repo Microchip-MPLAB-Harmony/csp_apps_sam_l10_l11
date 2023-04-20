@@ -53,8 +53,8 @@
 // Section: Configuration Bits
 // ****************************************************************************
 // ****************************************************************************
-#pragma config NVMCTRL_NSULCK = 0x7
-#pragma config BOD33_LEVEL = 0x6
+#pragma config NVMCTRL_NSULCK = 0x7U
+#pragma config BOD33_LEVEL = 0x6U
 #pragma config BOD33_DIS = CLEAR
 #pragma config BOD33_ACTION = 0x1
 #pragma config WDT_RUNSTDBY = CLEAR
@@ -65,11 +65,11 @@
 #pragma config WDT_EWOFFSET = 0xB
 #pragma config WDT_WEN = CLEAR
 #pragma config BOD33_HYST = CLEAR
-#pragma config IDAU_BOOTPROT = 0x0
-#pragma config BOOTROM_CRCKEY_0 = 0xffffffff
-#pragma config BOOTROM_CRCKEY_1 = 0xffffffff
-#pragma config BOOTROM_CRCKEY_2 = 0xffffffff
-#pragma config BOOTROM_CRCKEY_3 = 0xffffffff
+#pragma config IDAU_BOOTPROT = 0x0U
+#pragma config BOOTROM_CRCKEY_0 = 0xffffffffU
+#pragma config BOOTROM_CRCKEY_1 = 0xffffffffU
+#pragma config BOOTROM_CRCKEY_2 = 0xffffffffU
+#pragma config BOOTROM_CRCKEY_3 = 0xffffffffU
 
 
 
@@ -79,6 +79,11 @@
 // Section: Driver Initialization Data
 // *****************************************************************************
 // *****************************************************************************
+/* Following MISRA-C rules are deviated in the below code block */
+/* MISRA C-2012 Rule 11.1 */
+/* MISRA C-2012 Rule 11.3 */
+/* MISRA C-2012 Rule 11.8 */
+
 
 
 // *****************************************************************************
@@ -119,6 +124,8 @@
  ********************************************************************************/
 static void STDIO_BufferModeSet(void)
 {
+    /* MISRAC 2012 deviation block start */
+    /* MISRA C-2012 Rule 21.6 deviated 2 times in this file.  Deviation record ID -  H3_MISRAC_2012_R_21_6_DR_3 */
 
     /* Make stdin unbuffered */
     setbuf(stdin, NULL);
@@ -128,7 +135,7 @@ static void STDIO_BufferModeSet(void)
 }
 
 
-
+/* MISRAC 2012 deviation block end */
 
 /*******************************************************************************
   Function:
@@ -142,6 +149,8 @@ static void STDIO_BufferModeSet(void)
 
 void SYS_Initialize ( void* data )
 {
+    /* MISRAC 2012 deviation block start */
+    /* MISRA C-2012 Rule 2.2 deviated in this file.  Deviation record ID -  H3_MISRAC_2012_R_2_2_DR_1 */
 
     NVMCTRL_REGS->NVMCTRL_CTRLB = NVMCTRL_CTRLB_RWS(2);
 
@@ -159,9 +168,9 @@ void SYS_Initialize ( void* data )
 
     NVMCTRL_Initialize();
 
-    EVSYS_Initialize();
-
     SERCOM0_USART_Initialize();
+
+    EVSYS_Initialize();
 
     DMAC_Initialize();
 
@@ -171,9 +180,19 @@ void SYS_Initialize ( void* data )
 
 
 
+    /* MISRAC 2012 deviation block start */
+    /* Following MISRA-C rules deviated in this block  */
+    /* MISRA C-2012 Rule 11.3 - Deviation record ID - H3_MISRAC_2012_R_11_3_DR_1 */
+    /* MISRA C-2012 Rule 11.8 - Deviation record ID - H3_MISRAC_2012_R_11_8_DR_1 */
 
 
+
+
+    /* MISRAC 2012 deviation block end */
     NVIC_Initialize();
+
+
+    /* MISRAC 2012 deviation block end */
 
 }
 
