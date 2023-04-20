@@ -62,7 +62,7 @@
 
 
 
-static PAC_CALLBACK_OBJ pacCallbackObject;
+volatile static PAC_CALLBACK_OBJ pacCallbackObject;
 
 // *****************************************************************************
 // *****************************************************************************
@@ -80,7 +80,7 @@ void PAC_Initialize( void )
 bool PAC_PeripheralIsProtected( PAC_PERIPHERAL peripheral )
 {
     bool status = false;
-    const volatile uint32_t *statusRegBaseAddr = (const volatile uint32_t*) &(PAC_REGS->PAC_STATUSA);
+    const volatile uint32_t *statusRegBaseAddr = (const volatile uint32_t*)( PAC_BASE_ADDRESS + PAC_STATUSA_REG_OFST);
 
     /* Verify if the peripheral is protected or not */
     status = (((*(statusRegBaseAddr + ((uint32_t)peripheral / 32U))) & (1UL << ((uint32_t)peripheral % 32U))) != 0U);
@@ -101,11 +101,12 @@ void PAC_CallbackRegister( PAC_CALLBACK callback, uintptr_t context )
     pacCallbackObject.context = context;
 }
 
-void PAC_InterruptHandler( void )
+void __attribute__((used)) PAC_InterruptHandler( void )
 {
     if (pacCallbackObject.callback != NULL)
     {
-        pacCallbackObject.callback(pacCallbackObject.context);
+        uintptr_t context = pacCallbackObject.context;
+        pacCallbackObject.callback(context);
     }
 
     /* Clear all interrupt flags to remove active interrupt requests */
