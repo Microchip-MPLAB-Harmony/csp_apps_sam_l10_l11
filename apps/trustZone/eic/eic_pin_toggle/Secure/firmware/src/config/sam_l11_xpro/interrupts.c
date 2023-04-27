@@ -89,6 +89,7 @@ extern void DMAC_1_Handler             ( void ) __attribute__((weak, alias("Dumm
 extern void DMAC_2_Handler             ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void DMAC_3_Handler             ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void DMAC_OTHER_Handler         ( void ) __attribute__((weak, alias("Dummy_Handler")));
+extern void EVSYS_0_Handler            ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void EVSYS_1_Handler            ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void EVSYS_2_Handler            ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void EVSYS_3_Handler            ( void ) __attribute__((weak, alias("Dummy_Handler")));
@@ -150,6 +151,7 @@ const H3DeviceVectors exception_table=
     .pfnDMAC_2_Handler             = DMAC_2_Handler,
     .pfnDMAC_3_Handler             = DMAC_3_Handler,
     .pfnDMAC_OTHER_Handler         = DMAC_OTHER_Handler,
+    .pfnEVSYS_0_Handler            = EVSYS_0_Handler,
     .pfnEVSYS_1_Handler            = EVSYS_1_Handler,
     .pfnEVSYS_2_Handler            = EVSYS_2_Handler,
     .pfnEVSYS_3_Handler            = EVSYS_3_Handler,
