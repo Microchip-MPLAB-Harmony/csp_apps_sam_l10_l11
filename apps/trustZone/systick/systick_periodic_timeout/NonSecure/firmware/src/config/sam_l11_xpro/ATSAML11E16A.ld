@@ -1,7 +1,7 @@
 /*--------------------------------------------------------------------------
  * MPLAB XC32 Compiler -  ATSAML11E16A linker script
  * 
- * Copyright (c) 2022, Microchip Technology Inc. and its subsidiaries ("Microchip")
+ * Copyright (c) 2023, Microchip Technology Inc. and its subsidiaries ("Microchip")
  * All rights reserved.
  * 
  * This software is developed by Microchip Technology Inc. and its
@@ -77,6 +77,7 @@ ENTRY(__XC32_RESET_HANDLER_NAME)
 #elif (RAM_LENGTH > 0x4000)
 #  error RAM_LENGTH is greater than the max size of 0x4000
 #endif
+
 
 
 /*  Linker Macros controlling memory regions for TrustZone-M
@@ -234,47 +235,47 @@ MEMORY
 #endif
   ram (WX!R) : ORIGIN = TZ_RAM_ORIGIN, LENGTH = TZ_RAM_LENGTH
   config_00804000 : ORIGIN = 0x00804000, LENGTH = 0x4
-  config_0080C000 : ORIGIN = 0x0080C000, LENGTH = 0x4
   config_00804004 : ORIGIN = 0x00804004, LENGTH = 0x4
   config_00804008 : ORIGIN = 0x00804008, LENGTH = 0x4
-  config_0080C0EC : ORIGIN = 0x0080C0EC, LENGTH = 0x4
   config_0080400C : ORIGIN = 0x0080400C, LENGTH = 0x4
-  config_0080C010 : ORIGIN = 0x0080C010, LENGTH = 0x4
-  config_00804018 : ORIGIN = 0x00804018, LENGTH = 0x4
+  config_00804010 : ORIGIN = 0x00804010, LENGTH = 0x4
   config_00804014 : ORIGIN = 0x00804014, LENGTH = 0x4
-  config_0080C018 : ORIGIN = 0x0080C018, LENGTH = 0x4
+  config_00804018 : ORIGIN = 0x00804018, LENGTH = 0x4
+  config_0080401C : ORIGIN = 0x0080401C, LENGTH = 0x4
+  config_0080C000 : ORIGIN = 0x0080C000, LENGTH = 0x4
   config_0080C004 : ORIGIN = 0x0080C004, LENGTH = 0x4
+  config_0080C008 : ORIGIN = 0x0080C008, LENGTH = 0x4
+  config_0080C010 : ORIGIN = 0x0080C010, LENGTH = 0x4
+  config_0080C014 : ORIGIN = 0x0080C014, LENGTH = 0x4
+  config_0080C018 : ORIGIN = 0x0080C018, LENGTH = 0x4
   config_0080C01C : ORIGIN = 0x0080C01C, LENGTH = 0x4
   config_0080C020 : ORIGIN = 0x0080C020, LENGTH = 0x4
   config_0080C024 : ORIGIN = 0x0080C024, LENGTH = 0x4
   config_0080C028 : ORIGIN = 0x0080C028, LENGTH = 0x4
-  config_0080401C : ORIGIN = 0x0080401C, LENGTH = 0x4
   config_0080C02C : ORIGIN = 0x0080C02C, LENGTH = 0x4
   config_0080C030 : ORIGIN = 0x0080C030, LENGTH = 0x4
-  config_0080C008 : ORIGIN = 0x0080C008, LENGTH = 0x4
   config_0080C034 : ORIGIN = 0x0080C034, LENGTH = 0x4
   config_0080C038 : ORIGIN = 0x0080C038, LENGTH = 0x4
   config_0080C03C : ORIGIN = 0x0080C03C, LENGTH = 0x4
   config_0080C040 : ORIGIN = 0x0080C040, LENGTH = 0x4
-  config_0080C0E0 : ORIGIN = 0x0080C0E0, LENGTH = 0x4
   config_0080C044 : ORIGIN = 0x0080C044, LENGTH = 0x4
   config_0080C048 : ORIGIN = 0x0080C048, LENGTH = 0x4
   config_0080C04C : ORIGIN = 0x0080C04C, LENGTH = 0x4
   config_0080C050 : ORIGIN = 0x0080C050, LENGTH = 0x4
   config_0080C054 : ORIGIN = 0x0080C054, LENGTH = 0x4
   config_0080C058 : ORIGIN = 0x0080C058, LENGTH = 0x4
-  config_0080C0E4 : ORIGIN = 0x0080C0E4, LENGTH = 0x4
   config_0080C05C : ORIGIN = 0x0080C05C, LENGTH = 0x4
   config_0080C060 : ORIGIN = 0x0080C060, LENGTH = 0x4
-  config_00804010 : ORIGIN = 0x00804010, LENGTH = 0x4
   config_0080C064 : ORIGIN = 0x0080C064, LENGTH = 0x4
   config_0080C068 : ORIGIN = 0x0080C068, LENGTH = 0x4
   config_0080C06C : ORIGIN = 0x0080C06C, LENGTH = 0x4
-  config_0080C0F0 : ORIGIN = 0x0080C0F0, LENGTH = 0x4
+  config_0080C0E0 : ORIGIN = 0x0080C0E0, LENGTH = 0x4
+  config_0080C0E4 : ORIGIN = 0x0080C0E4, LENGTH = 0x4
   config_0080C0E8 : ORIGIN = 0x0080C0E8, LENGTH = 0x4
+  config_0080C0EC : ORIGIN = 0x0080C0EC, LENGTH = 0x4
+  config_0080C0F0 : ORIGIN = 0x0080C0F0, LENGTH = 0x4
   config_0080C0F4 : ORIGIN = 0x0080C0F4, LENGTH = 0x4
   config_0080C0F8 : ORIGIN = 0x0080C0F8, LENGTH = 0x4
-  config_0080C014 : ORIGIN = 0x0080C014, LENGTH = 0x4
   config_0080C0FC : ORIGIN = 0x0080C0FC, LENGTH = 0x4
 
 }
@@ -286,6 +287,9 @@ MEMORY
  * 
  * CODE_REGION defaults to 'rom', if rom is present (non-zero length),
  * and 'ram' otherwise.
+ * N.B. The BFA will still allocate code to any MEMORY named 'rom' regardless
+ * of CODE_REGION's value. If you wish to use rom for something else please
+ * rename the MEMORY entry.
  * DATA_REGION defaults to 'ram', which must be present.
  * VECTOR_REGION defaults to CODE_REGION, unless 'boot_rom' is present.
  */
@@ -317,36 +321,45 @@ SECTIONS
     .config_00804000 : {
       KEEP(*(.config_00804000))
     } > config_00804000
-    .config_0080C000 : {
-      KEEP(*(.config_0080C000))
-    } > config_0080C000
     .config_00804004 : {
       KEEP(*(.config_00804004))
     } > config_00804004
     .config_00804008 : {
       KEEP(*(.config_00804008))
     } > config_00804008
-    .config_0080C0EC : {
-      KEEP(*(.config_0080C0EC))
-    } > config_0080C0EC
     .config_0080400C : {
       KEEP(*(.config_0080400C))
     } > config_0080400C
-    .config_0080C010 : {
-      KEEP(*(.config_0080C010))
-    } > config_0080C010
-    .config_00804018 : {
-      KEEP(*(.config_00804018))
-    } > config_00804018
+    .config_00804010 : {
+      KEEP(*(.config_00804010))
+    } > config_00804010
     .config_00804014 : {
       KEEP(*(.config_00804014))
     } > config_00804014
-    .config_0080C018 : {
-      KEEP(*(.config_0080C018))
-    } > config_0080C018
+    .config_00804018 : {
+      KEEP(*(.config_00804018))
+    } > config_00804018
+    .config_0080401C : {
+      KEEP(*(.config_0080401C))
+    } > config_0080401C
+    .config_0080C000 : {
+      KEEP(*(.config_0080C000))
+    } > config_0080C000
     .config_0080C004 : {
       KEEP(*(.config_0080C004))
     } > config_0080C004
+    .config_0080C008 : {
+      KEEP(*(.config_0080C008))
+    } > config_0080C008
+    .config_0080C010 : {
+      KEEP(*(.config_0080C010))
+    } > config_0080C010
+    .config_0080C014 : {
+      KEEP(*(.config_0080C014))
+    } > config_0080C014
+    .config_0080C018 : {
+      KEEP(*(.config_0080C018))
+    } > config_0080C018
     .config_0080C01C : {
       KEEP(*(.config_0080C01C))
     } > config_0080C01C
@@ -359,18 +372,12 @@ SECTIONS
     .config_0080C028 : {
       KEEP(*(.config_0080C028))
     } > config_0080C028
-    .config_0080401C : {
-      KEEP(*(.config_0080401C))
-    } > config_0080401C
     .config_0080C02C : {
       KEEP(*(.config_0080C02C))
     } > config_0080C02C
     .config_0080C030 : {
       KEEP(*(.config_0080C030))
     } > config_0080C030
-    .config_0080C008 : {
-      KEEP(*(.config_0080C008))
-    } > config_0080C008
     .config_0080C034 : {
       KEEP(*(.config_0080C034))
     } > config_0080C034
@@ -383,9 +390,6 @@ SECTIONS
     .config_0080C040 : {
       KEEP(*(.config_0080C040))
     } > config_0080C040
-    .config_0080C0E0 : {
-      KEEP(*(.config_0080C0E0))
-    } > config_0080C0E0
     .config_0080C044 : {
       KEEP(*(.config_0080C044))
     } > config_0080C044
@@ -404,18 +408,12 @@ SECTIONS
     .config_0080C058 : {
       KEEP(*(.config_0080C058))
     } > config_0080C058
-    .config_0080C0E4 : {
-      KEEP(*(.config_0080C0E4))
-    } > config_0080C0E4
     .config_0080C05C : {
       KEEP(*(.config_0080C05C))
     } > config_0080C05C
     .config_0080C060 : {
       KEEP(*(.config_0080C060))
     } > config_0080C060
-    .config_00804010 : {
-      KEEP(*(.config_00804010))
-    } > config_00804010
     .config_0080C064 : {
       KEEP(*(.config_0080C064))
     } > config_0080C064
@@ -425,21 +423,27 @@ SECTIONS
     .config_0080C06C : {
       KEEP(*(.config_0080C06C))
     } > config_0080C06C
-    .config_0080C0F0 : {
-      KEEP(*(.config_0080C0F0))
-    } > config_0080C0F0
+    .config_0080C0E0 : {
+      KEEP(*(.config_0080C0E0))
+    } > config_0080C0E0
+    .config_0080C0E4 : {
+      KEEP(*(.config_0080C0E4))
+    } > config_0080C0E4
     .config_0080C0E8 : {
       KEEP(*(.config_0080C0E8))
     } > config_0080C0E8
+    .config_0080C0EC : {
+      KEEP(*(.config_0080C0EC))
+    } > config_0080C0EC
+    .config_0080C0F0 : {
+      KEEP(*(.config_0080C0F0))
+    } > config_0080C0F0
     .config_0080C0F4 : {
       KEEP(*(.config_0080C0F4))
     } > config_0080C0F4
     .config_0080C0F8 : {
       KEEP(*(.config_0080C0F8))
     } > config_0080C0F8
-    .config_0080C014 : {
-      KEEP(*(.config_0080C014))
-    } > config_0080C014
     .config_0080C0FC : {
       KEEP(*(.config_0080C0FC))
     } > config_0080C0FC
