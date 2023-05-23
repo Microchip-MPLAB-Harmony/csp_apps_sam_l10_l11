@@ -10,7 +10,7 @@
     <aExt>*.s*; *.src; *.a*</aExt>
     <oExt>*.obj; *.o</oExt>
     <lExt>*.lib</lExt>
-    <tExt>*.txt; *.h; *.inc</tExt>
+    <tExt>*.txt; *.h; *.inc; *.md</tExt>
     <pExt>*.plm</pExt>
     <CppX>*.cpp</CppX>
     <nMigrate>0</nMigrate>
@@ -130,7 +130,7 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>CMSIS_AGDI_V8M</Key>
-          <Name>-X"" -O206 -S8 -C0 -P00000000 -N00("ARM CoreSight SW-DP") -D00(0BF11477) -L00(0) -TO65536 -TC10000000 -TT10000000 -TP20 -TDS8007 -TDT0 -TDC1F -TIEFFFFFFFF -TIP8 -FO7 -FD20000000 -FC1000 -FN2 -FF0ATSAML10_64.FLM -FS00 -FL010000 -FP0($$Device:ATSAML10E16A$mdk\flash\ATSAML10_64.FLM) -FF1ATSAML10_EEPROM.FLM -FS1400000 -FL1800 -FP1($$Device:ATSAML10E16A$mdk\flash\ATSAML10_EEPROM.FLM)</Name>
+          <Name>-X"" -O206 -S8 -C0 -P00000000 -N00("ARM CoreSight SW-DP") -D00(0BF11477) -L00(0) -TO65536 -TC10000000 -TT10000000 -TP20 -TDS8007 -TDT0 -TDC1F -TIEFFFFFFFF -TIP8 -FO7 -FD20000000 -FC1000 -FN2 -FF0ATSAML10_64.FLM -FS00 -FL010000 -FP0($$Device:ATSAML10E16A$keil\flash\ATSAML10_64.FLM) -FF1ATSAML10_EEPROM.FLM -FS1400000 -FL1800 -FP1($$Device:ATSAML10E16A$keil\flash\ATSAML10_EEPROM.FLM)</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
@@ -140,7 +140,7 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>UL2V8M</Key>
-          <Name>UL2V8M(-S0 -C0 -P0 -FD20000000 -FC1000 -FN2 -FF0ATSAML10_64 -FS00 -FL010000 -FF1ATSAML10_EEPROM -FS1400000 -FL1800 -FP0($$Device:ATSAML10E16A$mdk\flash\ATSAML10_64.FLM) -FP1($$Device:ATSAML10E16A$mdk\flash\ATSAML10_EEPROM.FLM))</Name>
+          <Name>UL2V8M(-S0 -C0 -P0 -FD20000000 -FC1000 -FN2 -FF0ATSAML10_64 -FS00 -FL010000 -FF1ATSAML10_EEPROM -FS1400000 -FL1800 -FP0($$Device:ATSAML10E16A$keil\flash\ATSAML10_64.FLM) -FP1($$Device:ATSAML10E16A$keil\flash\ATSAML10_EEPROM.FLM))</Name>
         </SetRegEntry>
       </TargetDriverDllRegistry>
       <Breakpoint/>
