@@ -55,8 +55,8 @@
 #include "peripheral/port/plib_port.h"
 #include "peripheral/clock/plib_clock.h"
 #include "peripheral/nvic/plib_nvic.h"
-#include "peripheral/trng/plib_trng.h"
 #include "peripheral/pm/plib_pm.h"
+#include "peripheral/trng/plib_trng.h"
 #include "peripheral/eic/plib_eic.h"
 
 // DOM-IGNORE-BEGIN
@@ -68,13 +68,13 @@ extern "C" {
 // DOM-IGNORE-END
 
 /* Device Information */
-#define DEVICE_NAME			 "ATSAML10E16A"
-#define DEVICE_ARCH			 "CORTEX-M23"
-#define DEVICE_FAMILY		 "SAML"
-#define DEVICE_SERIES		 "SAML10"
+#define DEVICE_NAME          "ATSAML10E16A"
+#define DEVICE_ARCH          "CORTEX-M23"
+#define DEVICE_FAMILY        "SAML"
+#define DEVICE_SERIES        "SAML10"
 
 /* CPU clock frequency */
-#define CPU_CLOCK_FREQUENCY 32000000
+#define CPU_CLOCK_FREQUENCY 32000000U
 
 // *****************************************************************************
 // *****************************************************************************
