@@ -6,7 +6,7 @@ Pin Number,Pin ID,Custom Name,Function,Mode, Direction,Latch,Pull Up,Pull Down,D
 5,PA04,,Available,,,,,,NORMAL
 6,PA05,,Available,,,,,,NORMAL
 7,PA06,,Available,,,,,,NORMAL
-8,PA07,LED,GPIO,Digital,In/Out,High,,,NORMAL
+8,PA07,LED,GPIO,Digital,Out,Low,,,NORMAL
 11,PA08,,Available,,,,,,NORMAL
 12,PA09,,Available,,,,,,NORMAL
 13,PA10,,Available,,,,,,NORMAL
