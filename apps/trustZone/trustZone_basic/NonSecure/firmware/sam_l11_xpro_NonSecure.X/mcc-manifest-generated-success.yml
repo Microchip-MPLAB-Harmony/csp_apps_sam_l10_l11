@@ -2,12 +2,12 @@
 
 manifest_file_version: 1.0.0
 project: trustZone_basic_sam_l11_xpro_NonSecure
-creation_date: 2024-10-23T12:20:02.389+05:30[Asia/Calcutta]
+creation_date: 2024-11-12T23:17:46.630+05:30[Asia/Calcutta]
 operating_system: Windows 10
 mcc_mode: IDE
 mcc_mode_version: v6.20
 device_name: ATSAML11E16A
-compiler: XC32 4.21
+compiler: XC32 4.45
 mcc_version: 5.5.1
 mcc_core_version: 5.7.1
 content_manager_version: 5.0.1
@@ -18,5 +18,5 @@ device_library: {library_class: com.microchip.mcc.harmony.Harmony3Library, name:
     V3, version: 1.5.3}
 packs: {name: SAML11_DFP, version: 4.5.268}
 modules:
-- {name: csp, type: HARMONY, version: v3.20.0-rc.1-13-g1e373d5}
 - {name: CMSIS_5, type: HARMONY, version: 5.9.0}
+- {name: csp, type: HARMONY, version: v3.20.0}
