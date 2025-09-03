@@ -20,7 +20,7 @@
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2025 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -78,12 +78,13 @@ void __attribute__((optimize("-O1"), long_call, noreturn, used))Dummy_Handler(vo
 }
 
 /* MISRAC 2012 deviation block start */
-/* MISRA C-2012 Rule 8.6 deviated 4 times.  Deviation record ID -  H3_MISRAC_2012_R_8_6_DR_1 */
+/* MISRA C-2012 Rule 8.6 deviated 5 times.  Deviation record ID -  H3_MISRAC_2012_R_8_6_DR_1 */
 /* Device vectors list dummy definition*/
-extern void SVCall_Handler             ( void ) __attribute__((weak, alias("Dummy_Handler")));
-extern void PendSV_Handler             ( void ) __attribute__((weak, alias("Dummy_Handler")));
-extern void SysTick_Handler            ( void ) __attribute__((weak, alias("Dummy_Handler")));
-extern void EIC_OTHER_Handler          ( void ) __attribute__((weak, alias("Dummy_Handler")));
+extern void SVCall_Handler             ( void ) __attribute__((weak, alias("Dummy_Handler"),noreturn));
+extern void PendSV_Handler             ( void ) __attribute__((weak, alias("Dummy_Handler"),noreturn));
+extern void SysTick_Handler            ( void ) __attribute__((weak, alias("Dummy_Handler"),noreturn));
+extern void EIC_OTHER_Handler          ( void ) __attribute__((weak, alias("Dummy_Handler"),noreturn));
+extern void EVSYS_1_Handler            ( void ) __attribute__((weak, alias("Dummy_Handler"),noreturn));
 
 
 /* MISRAC 2012 deviation block end */
@@ -105,6 +106,7 @@ const H3DeviceVectors exception_table=
     .pfnPendSV_Handler             = PendSV_Handler,
     .pfnSysTick_Handler            = SysTick_Handler,
     .pfnEIC_OTHER_Handler          = EIC_OTHER_Handler,
+    .pfnEVSYS_1_Handler            = EVSYS_1_Handler,
 
 
 };
