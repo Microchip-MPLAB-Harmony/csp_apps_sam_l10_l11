@@ -50,12 +50,26 @@ void TRAM_Initialize( void )
     }
 
     TRAM_REGS->TRAM_CTRLA = TRAM_CTRLA_ENABLE_Msk | TRAM_CTRLA_TAMPERS_Msk;
-    
+
     while((TRAM_REGS->TRAM_SYNCBUSY & TRAM_SYNCBUSY_ENABLE_Msk) == TRAM_SYNCBUSY_ENABLE_Msk)
     {
         //wait for synchronization
     }
 
+}
+
+bool TRAM_Enable(bool en)
+{
+    bool module_en = (bool)((TRAM_REGS->TRAM_CTRLA & TRAM_CTRLA_ENABLE_Msk) >> TRAM_CTRLA_ENABLE_Pos);
+
+    en == false ? (TRAM_REGS->TRAM_CTRLA &= ~TRAM_CTRLA_ENABLE_Msk) : (TRAM_REGS->TRAM_CTRLA |= TRAM_CTRLA_ENABLE_Msk);
+
+    while((TRAM_REGS->TRAM_SYNCBUSY & TRAM_SYNCBUSY_ENABLE_Msk) == TRAM_SYNCBUSY_ENABLE_Msk)
+    {
+        //wait for synchronization
+    }
+
+    return module_en;
 }
 
 bool TRAM_RAMSet(uint32_t ramIndex, uint32_t data)
@@ -82,11 +96,21 @@ bool TRAM_RAMGet(uint32_t ramIndex, uint32_t *data)
 
 void TRAM_DataScrambleKeySet(uint32_t dsckey)
 {
+    bool en = TRAM_Enable(false);
+
     TRAM_REGS->TRAM_DSCC = TRAM_DSCC_DSCKEY(dsckey);
+
+    if (en)
+    {
+        (void)TRAM_Enable(true);
+    }
+
 }
 
 void TRAM_DataScrambleEnable(bool enable)
 {
+    bool en = TRAM_Enable(false);
+
     if (enable == true)
     {
         TRAM_REGS->TRAM_DSCC |= TRAM_DSCC_DSCEN_Msk;
@@ -95,5 +119,10 @@ void TRAM_DataScrambleEnable(bool enable)
     {
         /* Clear DSCEN bit and retain the DSCKEY bits (Existing values of DSCKEY bits will be XOR'ed with 0)*/
         TRAM_REGS->TRAM_DSCC = TRAM_DSCC_RESETVALUE;
+    }
+
+    if (en)
+    {
+        (void)TRAM_Enable(true);
     }
 }

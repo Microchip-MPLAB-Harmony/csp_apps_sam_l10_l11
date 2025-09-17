@@ -58,6 +58,8 @@
 /***************************** TRAM API *******************************/
 void TRAM_Initialize( void );
 
+bool TRAM_Enable(bool en);
+
 bool TRAM_RAMSet(uint32_t ramIndex, uint32_t data);
 
 bool TRAM_RAMGet(uint32_t ramIndex, uint32_t *data);
