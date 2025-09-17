@@ -143,9 +143,23 @@
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="ExternalFiles" displayName="Important Files" projectFiles="true">
+      <logicalFolder name="opamp_adc_gain_amp_sam_l10_xpro_sam_l10_xpro" displayName="opamp_adc_gain_amp_sam_l10_xpro_sam_l10_xpro" projectFiles="true">
+        <itemPath>opamp_adc_gain_amp_sam_l10_xpro_sam_l10_xpro/mcc-config.mc4</itemPath>
+        <logicalFolder name="components" displayName="components" projectFiles="true">
+          <itemPath>opamp_adc_gain_amp_sam_l10_xpro_sam_l10_xpro/components/adc.yml</itemPath>
+          <itemPath>opamp_adc_gain_amp_sam_l10_xpro_sam_l10_xpro/components/cmsis.yml</itemPath>
+          <itemPath>opamp_adc_gain_amp_sam_l10_xpro_sam_l10_xpro/components/core.yml</itemPath>
+          <itemPath>opamp_adc_gain_amp_sam_l10_xpro_sam_l10_xpro/components/dfp.yml</itemPath>
+          <itemPath>opamp_adc_gain_amp_sam_l10_xpro_sam_l10_xpro/components/evsys.yml</itemPath>
+          <itemPath>opamp_adc_gain_amp_sam_l10_xpro_sam_l10_xpro/components/nvmctrl.yml</itemPath>
+          <itemPath>opamp_adc_gain_amp_sam_l10_xpro_sam_l10_xpro/components/opamp.yml</itemPath>
+          <itemPath>opamp_adc_gain_amp_sam_l10_xpro_sam_l10_xpro/components/pm.yml</itemPath>
+          <itemPath>opamp_adc_gain_amp_sam_l10_xpro_sam_l10_xpro/components/sercom0.yml</itemPath>
+          <itemPath>opamp_adc_gain_amp_sam_l10_xpro_sam_l10_xpro/components/stdio.yml</itemPath>
+        </logicalFolder>
+      </logicalFolder>
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/sam_l10_xpro/harmony-manifest-success.yml</itemPath>
-      <itemPath>opamp_adc_gain_amp_sam_l10_xpro.mc3</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript" displayName="Linker Files" projectFiles="true">
       <logicalFolder name="f1" displayName="config" projectFiles="true">
@@ -217,7 +231,7 @@
         <targetPluginBoard/>
         <platformTool>EdbgTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.45</languageToolchainVersion>
+        <languageToolchainVersion>4.60</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>

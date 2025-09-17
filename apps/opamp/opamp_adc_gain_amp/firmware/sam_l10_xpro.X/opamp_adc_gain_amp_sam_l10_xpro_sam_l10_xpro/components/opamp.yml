@@ -1,0 +1,105 @@
+configVersion: 1.0.0
+componentName: opamp
+coreVersion: 5.8.2
+device: ATSAML10E16A
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: opamp
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: CMSIS_5
+  type: package
+  version: 5.9.0
+- dependencyPackage: ''
+  name: csp
+  type: package
+  version: v3.23.0
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments: {}
+  elementPosition:
+    attributes:
+      id: __ROOTVIEW
+    children:
+    - children:
+      - attributes:
+          id: opamp
+          x: '490'
+          y: '243'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    OPAMP_OPAMPCTRL_2_ANAOUT:
+      attributes:
+        id: OPAMP_OPAMPCTRL_2_ANAOUT
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    OPAMP_OPAMPCTRL_2_ENABLE:
+      attributes:
+        id: OPAMP_OPAMPCTRL_2_ENABLE
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    OPAMP_OPAMPCTRL_2_MUXNEG:
+      attributes:
+        id: OPAMP_OPAMPCTRL_2_MUXNEG
+      children:
+      - children:
+        - attributes:
+            value: '1'
+          type: User
+        type: Values
+      type: KeyValueSet
+    OPAMP_OPAMPCTRL_2_POTMUX:
+      attributes:
+        id: OPAMP_OPAMPCTRL_2_POTMUX
+      children:
+      - children:
+        - attributes:
+            value: '1'
+          type: User
+        type: Values
+      type: KeyValueSet
+    OPAMP_OPAMPCTRL_2_RES1EN:
+      attributes:
+        id: OPAMP_OPAMPCTRL_2_RES1EN
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    OPAMP_OPAMPCTRL_2_RES1MUX:
+      attributes:
+        id: OPAMP_OPAMPCTRL_2_RES1MUX
+      children:
+      - children:
+        - attributes:
+            value: '3'
+          type: User
+        type: Values
+      type: KeyValueSet
+    OPAMP_OPAMPCTRL_2_RES2OUT:
+      attributes:
+        id: OPAMP_OPAMPCTRL_2_RES2OUT
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+  userData: {}
