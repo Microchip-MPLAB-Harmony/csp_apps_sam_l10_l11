@@ -268,7 +268,7 @@
         <property key="programoptions.preserveuserid" value="false"/>
       </AtmelIceTool>
       <C32>
-        <property key="additional-warnings" value="true"/>
+        <property key="additional-warnings" value="false"/>
         <property key="addresss-attribute-use" value="false"/>
         <property key="appendMe"
                   value="-Waggregate-return -Wbad-function-cast -Werror-implicit-function-declaration -Wfloat-equal -Wformat=2 -Winline -Wmissing-noreturn -Wnested-externs -Wno-deprecated-declarations -Wpacked -Wpointer-arith -Wredundant-decls -Wshadow -Wstrict-prototypes -Wundef -Wunreachable-code -Wwrite-strings -mcmse"/>
@@ -282,7 +282,7 @@
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
-        <property key="make-warnings-into-errors" value="true"/>
+        <property key="make-warnings-into-errors" value="false"/>
         <property key="optimization-level" value="-O1"/>
         <property key="place-data-into-section" value="true"/>
         <property key="post-instruction-scheduling" value="default"/>
