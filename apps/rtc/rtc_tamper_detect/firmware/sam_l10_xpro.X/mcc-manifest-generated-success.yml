@@ -2,8 +2,8 @@
 
 manifest_file_version: 1.0.0
 project: rtc_tamper_detect_sam_l10_xpro
-creation_date: 2025-09-17T05:51:58.471+00:00[UTC]
-operating_system: Windows 10
+creation_date: 2025-11-18T10:20:57.305+00:00[UTC]
+operating_system: Windows 11
 mcc_mode: IDE
 mcc_mode_version: v6.25
 device_name: ATSAML10E16A

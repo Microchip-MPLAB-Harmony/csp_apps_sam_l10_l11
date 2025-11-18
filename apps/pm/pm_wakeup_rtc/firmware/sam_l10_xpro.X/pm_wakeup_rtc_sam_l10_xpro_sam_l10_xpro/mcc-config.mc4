@@ -20,7 +20,7 @@ generatedFileHashHistoryMap:
 - file: ..\src\config\sam_l10_xpro\ATSAML10E16A.ld
   hash: 1d94447d77644b78d3bb699d336f843643fba5297fd50da2938d986d3ef8313a
 - file: ..\src\config\sam_l10_xpro\definitions.h
-  hash: 3afde00664244c22296e911522a8b70573d9e369306580cdef2836b9792c00da
+  hash: a91a1c7828f946cfc6dc16ea353bbbf2887f3454cbcdd1969bf0ef70301b7ba9
 - file: ..\src\config\sam_l10_xpro\device.h
   hash: 70c74c0cb8da2c87fa878a18cf5aa2f7bc8c21e7e4c6ab8a3fa6ef364f2db23a
 - file: ..\src\config\sam_l10_xpro\device_cache.h
@@ -30,7 +30,7 @@ generatedFileHashHistoryMap:
 - file: ..\src\config\sam_l10_xpro\exceptions.c
   hash: 42f9da2668e04ccb3473d45b149683a00f80072c6883c7918d6ce93997cd6987
 - file: ..\src\config\sam_l10_xpro\initialization.c
-  hash: e8089eb9ec0a7e72381c97b48657541cefec83175875835a0074f054137b15d1
+  hash: bba419a765e7c1f288f80fecdbccff16cdd9f4f387b4a6a9edfc486512f85fe4
 - file: ..\src\config\sam_l10_xpro\interrupts.c
   hash: d592acff7e2f3a83cb83d772d0a45b3eb1ad08fdbed4a914d97e0baeae0e054f
 - file: ..\src\config\sam_l10_xpro\interrupts.h

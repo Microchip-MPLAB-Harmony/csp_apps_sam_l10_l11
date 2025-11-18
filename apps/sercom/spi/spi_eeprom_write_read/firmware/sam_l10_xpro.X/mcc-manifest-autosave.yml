@@ -2,8 +2,8 @@
 
 manifest_file_version: 1.0.0
 project: spi_eeprom_write_read_sam_l10_xpro
-creation_date: 2025-09-17T05:51:26.213+00:00[UTC]
-operating_system: Windows 10
+creation_date: 2025-11-18T10:20:04.157+00:00[UTC]
+operating_system: Windows 11
 mcc_mode: IDE
 mcc_mode_version: v6.25
 device_name: ATSAML10E16A

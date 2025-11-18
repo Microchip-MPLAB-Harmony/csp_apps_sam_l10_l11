@@ -2,8 +2,8 @@
 
 manifest_file_version: 1.0.0
 project: dmac_memory_transfer_sam_l10_xpro
-creation_date: 2025-09-17T05:53:38.359+00:00[UTC]
-operating_system: Windows 10
+creation_date: 2025-11-18T10:25:02.962+00:00[UTC]
+operating_system: Windows 11
 mcc_mode: IDE
 mcc_mode_version: v6.25
 device_name: ATSAML10E16A
